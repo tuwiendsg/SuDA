@@ -1,0 +1,429 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:susgovdata="http://pcccl/susgovdata#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://pcccl/susgovdata">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="MonitoringDataType">
+    <rdfs:label xml:lang="en">MonitoringDataType</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Floor">
+    <rdfs:label xml:lang="en">Floor</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MonitoredObject"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="CloudPlatformServiceConfiguration">
+    <rdfs:label xml:lang="en">CloudPlatformServiceConfiguration</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Component">
+    <rdfs:label xml:lang="en">Component</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MonitoredObject"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Location">
+    <rdfs:label xml:lang="en">Location</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Building">
+    <rdfs:label xml:lang="en">Building</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MonitoredObject"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="MonitoringDataStream">
+    <rdfs:label xml:lang="en">MonitoringDataStream</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SensorModel">
+    <rdfs:label xml:lang="en">SensorModel</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SensorConfiguration">
+    <rdfs:label xml:lang="en">SensorConfiguration</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Attribute">
+    <rdfs:label xml:lang="en">Attribute</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SensorIntegrationSystemModel">
+    <rdfs:label xml:lang="en">SensorIntegrationSystemModel</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SensorIntegrationSystem">
+    <rdfs:label xml:lang="en">SensorIntegrationSystem</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="AttributeName">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AttributeName</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="SensorIntegrationSystemConfiguration">
+    <rdfs:label xml:lang="en">SensorIntegrationSystemConfiguration</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Facility">
+    <rdfs:label xml:lang="en">Facility</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MonitoredObject"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SystemConfiguration">
+    <rdfs:label xml:lang="en">SystemConfiguration</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="MonitoringSensor">
+    <rdfs:label xml:lang="en">MonitoringSensor</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Space">
+    <rdfs:label xml:lang="en">Space</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MonitoredObject"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SystemCapability">
+    <rdfs:label xml:lang="en">SystemCapability</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="System">
+    <rdfs:label xml:lang="en">System</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MonitoredObject"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AttributeGroup">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AttributeGroup</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#MonitoredObject">
+    <rdfs:label xml:lang="en">MonitoringObject</rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasCloudPlatformServiceConfiguration">
+    <rdfs:label xml:lang="en">hasCloudPlatformServiceConfiguration</rdfs:label>
+    <rdfs:range rdf:resource="#CloudPlatformServiceConfiguration"/>
+    <rdfs:domain rdf:resource="#SensorIntegrationSystem"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="consistsOfSpace">
+    <rdfs:label xml:lang="en">consistsOfSpace</rdfs:label>
+    <rdfs:domain rdf:resource="#Floor"/>
+    <rdfs:range rdf:resource="#Space"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasMonitoredObject">
+    <rdfs:label xml:lang="en">hasMonitoredObject</rdfs:label>
+    <rdfs:range rdf:resource="#MonitoredObject"/>
+    <rdfs:domain rdf:resource="#MonitoringSensor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDataType">
+    <rdfs:label xml:lang="en">hasDataType</rdfs:label>
+    <rdfs:domain rdf:resource="#MonitoringDataStream"/>
+    <rdfs:range rdf:resource="#MonitoringDataType"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasAttributeGroup">
+    <rdfs:range rdf:resource="#AttributeGroup"/>
+    <rdfs:domain rdf:resource="#SystemConfiguration"/>
+    <rdfs:domain rdf:resource="#SensorIntegrationSystemModel"/>
+    <rdfs:domain rdf:resource="#SensorModel"/>
+    <rdfs:domain rdf:resource="#AttributeGroup"/>
+    <rdfs:domain rdf:resource="#SystemCapability"/>
+    <rdfs:domain rdf:resource="#SensorIntegrationSystemConfiguration"/>
+    <rdfs:domain rdf:resource="#SensorConfiguration"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has attribute group</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasAttribute">
+    <rdfs:label xml:lang="en">hasAttribute</rdfs:label>
+    <rdfs:domain rdf:resource="#SystemConfiguration"/>
+    <rdfs:domain rdf:resource="#SensorConfiguration"/>
+    <rdfs:domain rdf:resource="#SensorModel"/>
+    <rdfs:domain rdf:resource="#SystemCapability"/>
+    <rdfs:range rdf:resource="#Attribute"/>
+    <rdfs:domain rdf:resource="#AttributeGroup"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasCapability">
+    <rdfs:label xml:lang="en">hasCapability</rdfs:label>
+    <rdfs:domain rdf:resource="#System"/>
+    <rdfs:range rdf:resource="#SystemCapability"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasConfiguration">
+    <rdfs:label xml:lang="en">hasConfiguration</rdfs:label>
+    <rdfs:domain rdf:resource="#System"/>
+    <rdfs:range rdf:resource="#SystemConfiguration"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="consistsOfFloor">
+    <rdfs:label xml:lang="en">consistsOfFloor</rdfs:label>
+    <rdfs:domain rdf:resource="#Building"/>
+    <rdfs:range rdf:resource="#Floor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDataStream">
+    <rdfs:label xml:lang="en">hasDataStream</rdfs:label>
+    <rdfs:range rdf:resource="#MonitoringDataStream"/>
+    <rdfs:domain rdf:resource="#MonitoringSensor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="consistsOfBuilding">
+    <rdfs:label xml:lang="en">consistsOfBuilding</rdfs:label>
+    <rdfs:range rdf:resource="#Building"/>
+    <rdfs:domain rdf:resource="#Facility"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="consistsOfComponent">
+    <rdfs:label xml:lang="en">consistsOfComponent</rdfs:label>
+    <rdfs:range rdf:resource="#Component"/>
+    <rdfs:domain rdf:resource="#System"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="consistsOfSubSpace">
+    <rdfs:label xml:lang="en">consistsOfSubSpace</rdfs:label>
+    <rdfs:domain rdf:resource="#Space"/>
+    <rdfs:range rdf:resource="#Space"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSensorModel">
+    <rdfs:label xml:lang="en">hasSensorModel</rdfs:label>
+    <rdfs:domain rdf:resource="#MonitoringSensor"/>
+    <rdfs:range rdf:resource="#SensorModel"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSystem">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >has system</rdfs:label>
+    <rdfs:domain rdf:resource="#Floor"/>
+    <rdfs:domain rdf:resource="#Facility"/>
+    <rdfs:domain rdf:resource="#Space"/>
+    <rdfs:domain rdf:resource="#Building"/>
+    <rdfs:range rdf:resource="#System"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="consistsOfSubSystem">
+    <rdfs:label xml:lang="en">consistsOfSubSystem</rdfs:label>
+    <rdfs:domain rdf:resource="#System"/>
+    <rdfs:range rdf:resource="#System"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSensorIntegrationSystemModel">
+    <rdfs:label xml:lang="en">hasSensorIntegrationSystemModel</rdfs:label>
+    <rdfs:domain rdf:resource="#SensorIntegrationSystem"/>
+    <rdfs:range rdf:resource="#SensorIntegrationSystemModel"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasMonitoringSensor">
+    <rdfs:label xml:lang="en">hasMonitoringSensor</rdfs:label>
+    <rdfs:range rdf:resource="#MonitoringSensor"/>
+    <rdfs:domain rdf:resource="#SensorIntegrationSystem"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasRelevantMonitoredObject">
+    <rdfs:label xml:lang="en">hasRelevantMonitoredObject</rdfs:label>
+    <rdfs:range rdf:resource="#MonitoredObject"/>
+    <rdfs:domain rdf:resource="#MonitoringSensor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isLocatedAt">
+    <rdfs:label xml:lang="en">isLocatedAt</rdfs:label>
+    <rdfs:range rdf:resource="#Location"/>
+    <rdfs:domain rdf:resource="#MonitoredObject"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSensorConfiguration">
+    <rdfs:label xml:lang="en">hasSensorConfiguration</rdfs:label>
+    <rdfs:domain rdf:resource="#MonitoringSensor"/>
+    <rdfs:range rdf:resource="#SensorConfiguration"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasSensorIntegrationSystemConfiguration">
+    <rdfs:label xml:lang="en">hasSensorIntegrationSystemConfiguration</rdfs:label>
+    <rdfs:domain rdf:resource="#SensorIntegrationSystem"/>
+    <rdfs:range rdf:resource="#SensorIntegrationSystemConfiguration"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="attributeValueType">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AttributeValueType</rdfs:label>
+    <rdfs:domain rdf:resource="#Attribute"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="name">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >name</rdfs:label>
+    <rdfs:domain rdf:resource="#MonitoringDataType"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#AttributeName"/>
+    <rdfs:domain rdf:resource="#AttributeGroup"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="attributeName">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AttributeName</rdfs:label>
+    <rdfs:domain rdf:resource="#Attribute"/>
+    <rdfs:range rdf:resource="#AttributeName"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="metric">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >metric</rdfs:label>
+    <rdfs:domain rdf:resource="#MonitoringDataType"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="dataStreamURI">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dataStreamURI</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:domain rdf:resource="#MonitoringDataStream"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="attributeValue">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AttributeValue</rdfs:label>
+    <rdfs:domain rdf:resource="#Attribute"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <susgovdata:AttributeName rdf:ID="Quantity">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Quantity</rdfs:label>
+  </susgovdata:AttributeName>
+  <susgovdata:AttributeGroup rdf:ID="AirHandlerReturnFanDrive">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AirHandlerReturnFanDrive</rdfs:label>
+  </susgovdata:AttributeGroup>
+  <susgovdata:AttributeGroup rdf:ID="AirHandlerControlSystem">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AirHandlerControlSystem</rdfs:label>
+  </susgovdata:AttributeGroup>
+  <susgovdata:AttributeGroup rdf:ID="AirHandlerSupplyFanDrive">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AirHandlerSupplyFanDrive</rdfs:label>
+  </susgovdata:AttributeGroup>
+  <susgovdata:AttributeName rdf:ID="Version">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Version</rdfs:label>
+  </susgovdata:AttributeName>
+  <susgovdata:MonitoringDataType rdf:ID="PumpRunStatus">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PumpRunStatus</rdfs:label>
+    <susgovdata:metric rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >boolean</susgovdata:metric>
+  </susgovdata:MonitoringDataType>
+  <susgovdata:MonitoringSensor rdf:ID="Chiller1Sensor">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Chiller1Sensor</rdfs:label>
+    <susgovdata:hasDataStream>
+      <susgovdata:MonitoringDataStream rdf:ID="Chiller1_CktB_Fan1_OP">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Chiller1_CktB_Fan1_OP</rdfs:label>
+        <susgovdata:dataStreamURI rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://83.111.236.7:8088/obix/histories/DEWA_SATWA_new/Chiller1_CktB_Fan1_OP/</susgovdata:dataStreamURI>
+      </susgovdata:MonitoringDataStream>
+    </susgovdata:hasDataStream>
+    <susgovdata:hasDataStream>
+      <susgovdata:MonitoringDataStream rdf:ID="Chiller1RunSts">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Chiller1RunSts</rdfs:label>
+        <susgovdata:dataStreamURI rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://83.111.236.7:8088/obix/histories/DEWA_SATWA_new/Chiller1RunSts/</susgovdata:dataStreamURI>
+        <susgovdata:hasDataType>
+          <susgovdata:MonitoringDataType rdf:ID="ChillerRunningStatus">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >ChillerRunningStatus</rdfs:label>
+          </susgovdata:MonitoringDataType>
+        </susgovdata:hasDataType>
+      </susgovdata:MonitoringDataStream>
+    </susgovdata:hasDataStream>
+    <susgovdata:hasMonitoredObject>
+      <susgovdata:System rdf:ID="Chiller1">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Chiller1</rdfs:label>
+      </susgovdata:System>
+    </susgovdata:hasMonitoredObject>
+    <susgovdata:hasRelevantMonitoredObject>
+      <susgovdata:Building rdf:ID="DEWASATWA">
+        <rdfs:label>DEWASATWA</rdfs:label>
+        <susgovdata:isLocatedAt>
+          <susgovdata:Location rdf:ID="Dubai">
+            <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Dubai</rdfs:label>
+          </susgovdata:Location>
+        </susgovdata:isLocatedAt>
+      </susgovdata:Building>
+    </susgovdata:hasRelevantMonitoredObject>
+    <susgovdata:hasSensorModel>
+      <susgovdata:SensorModel rdf:ID="SensorChillerModel">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >SensorChillerModel</rdfs:label>
+      </susgovdata:SensorModel>
+    </susgovdata:hasSensorModel>
+    <susgovdata:hasSensorConfiguration>
+      <susgovdata:SensorConfiguration rdf:ID="Chiller1SensorConfiguration">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Chiller1SensorConfiguration</rdfs:label>
+      </susgovdata:SensorConfiguration>
+    </susgovdata:hasSensorConfiguration>
+  </susgovdata:MonitoringSensor>
+  <susgovdata:AttributeName rdf:ID="ControllerPartNumber">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ControllerPartNumber</rdfs:label>
+  </susgovdata:AttributeName>
+  <susgovdata:AttributeName rdf:ID="SerialNumber">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SerialNumber</rdfs:label>
+  </susgovdata:AttributeName>
+  <susgovdata:AttributeName rdf:ID="HeatPumpType">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >HeatPumpType</rdfs:label>
+  </susgovdata:AttributeName>
+  <susgovdata:Building rdf:ID="DEWASATWA1">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >DEWASATWA1</rdfs:label>
+  </susgovdata:Building>
+  <susgovdata:MonitoringDataType rdf:ID="PreFilterStatusType">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PreFilterStatusType</rdfs:label>
+    <susgovdata:metric rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >boolean</susgovdata:metric>
+    <susgovdata:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PreFilterStatus</susgovdata:name>
+  </susgovdata:MonitoringDataType>
+  <susgovdata:AttributeName rdf:ID="AvailableSpecs">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AvailableSpecs</rdfs:label>
+  </susgovdata:AttributeName>
+  <susgovdata:AttributeName rdf:ID="NumberOfControllers">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >NumberOfControllers</rdfs:label>
+  </susgovdata:AttributeName>
+  <susgovdata:MonitoringDataType rdf:ID="FreshAirTemperatureType">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >FreshAirTemperatureType</rdfs:label>
+    <susgovdata:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >FreshAirTemperature</susgovdata:name>
+    <susgovdata:metric rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C</susgovdata:metric>
+  </susgovdata:MonitoringDataType>
+  <susgovdata:MonitoringSensor rdf:ID="Chiller2Sensor">
+    <susgovdata:hasDataStream>
+      <susgovdata:MonitoringDataStream rdf:ID="Chiller2_Circuit_a_Suction_Superheat_Temp">
+        <susgovdata:dataStreamURI rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://83.111.236.7:8088/obix/histories/DEWA_SATWA_new/Chiller2_CircuitA_Suction_Superheat_Temp/</susgovdata:dataStreamURI>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Chiller2_Circuit_a_Suction_Superheat_Temp</rdfs:label>
+      </susgovdata:MonitoringDataStream>
+    </susgovdata:hasDataStream>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Chiller2Sensor</rdfs:label>
+    <susgovdata:hasDataStream>
+      <susgovdata:MonitoringDataStream rdf:ID="Chiller2RunSts">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Chiller2RunSts</rdfs:label>
+        <susgovdata:dataStreamURI rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://83.111.236.7:8088/obix/histories/DEWA_SATWA_new/Chiller2RunSts/</susgovdata:dataStreamURI>
+        <susgovdata:hasDataType rdf:resource="#ChillerRunningStatus"/>
+      </susgovdata:MonitoringDataStream>
+    </susgovdata:hasDataStream>
+    <susgovdata:hasMonitoredObject>
+      <susgovdata:System rdf:ID="Chiller2">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Chiller2</rdfs:label>
+      </susgovdata:System>
+    </susgovdata:hasMonitoredObject>
+    <susgovdata:hasRelevantMonitoredObject rdf:resource="#DEWASATWA"/>
+    <susgovdata:hasSensorModel rdf:resource="#SensorChillerModel"/>
+    <susgovdata:hasSensorConfiguration>
+      <susgovdata:SensorConfiguration rdf:ID="Chiller2SensorConfiguration">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Chiller2Sensor configuration</rdfs:label>
+      </susgovdata:SensorConfiguration>
+    </susgovdata:hasSensorConfiguration>
+  </susgovdata:MonitoringSensor>
+  <susgovdata:AttributeName rdf:ID="Manufacture">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Manufacture</rdfs:label>
+  </susgovdata:AttributeName>
+  <susgovdata:AttributeGroup rdf:ID="AirHandlerEquipmentDetail">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AirHandlerEquipmentDetail</rdfs:label>
+  </susgovdata:AttributeGroup>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->
