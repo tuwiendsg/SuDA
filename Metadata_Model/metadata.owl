@@ -1,0 +1,338 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY metadata "http://www.metadata.org/ontologies/metadata.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.metadata.org/ontologies/metadata.owl#"
+     xml:base="http://www.metadata.org/ontologies/metadata.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:metadata="http://www.metadata.org/ontologies/metadata.owl#">
+    <owl:Ontology rdf:about="http://www.metadata.org/ontologies/metadata.owl">
+        <rdfs:comment>This ontology describes about the information of data which are collected from 2 types of DaaS. First one holds structure related information of monitored object. Second one holds the data which are collected from sensor.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#hasCloudPlatformServiceConfiguration -->
+
+    <owl:ObjectProperty rdf:about="&metadata;hasCloudPlatformServiceConfiguration">
+        <rdfs:range rdf:resource="&metadata;CloudPlatformServiceConfiguration"/>
+        <rdfs:domain rdf:resource="&metadata;Monitored_Object"/>
+        <rdfs:domain rdf:resource="&metadata;Source_Name"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#hasFormat -->
+
+    <owl:ObjectProperty rdf:about="&metadata;hasFormat">
+        <rdfs:range rdf:resource="&metadata;Data_Format"/>
+        <rdfs:domain rdf:resource="&metadata;Monitoring_DataSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="&metadata;hasLocation">
+        <rdfs:domain rdf:resource="&metadata;Monitored_Object"/>
+        <rdfs:range rdf:resource="&metadata;Organization_Address"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#hasQuality -->
+
+    <owl:ObjectProperty rdf:about="&metadata;hasQuality">
+        <rdfs:domain rdf:resource="&metadata;Monitoring_DataSet"/>
+        <rdfs:range rdf:resource="&metadata;Quality"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#hasTimeRequired -->
+
+    <owl:ObjectProperty rdf:about="&metadata;hasTimeRequired">
+        <rdfs:range rdf:resource="&metadata;Analytic_Time"/>
+        <rdfs:domain rdf:resource="&metadata;CloudPlatformServiceConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#isAccessedBy -->
+
+    <owl:ObjectProperty rdf:about="&metadata;isAccessedBy">
+        <rdfs:range rdf:resource="&metadata;Access_Constraint"/>
+        <rdfs:domain rdf:resource="&metadata;Monitoring_DataSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#isCollectedFrom -->
+
+    <owl:ObjectProperty rdf:about="&metadata;isCollectedFrom">
+        <rdfs:domain rdf:resource="&metadata;Monitoring_DataSet"/>
+        <rdfs:range rdf:resource="&metadata;Temporal_Coverage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#attributeName -->
+
+    <owl:DatatypeProperty rdf:about="&metadata;attributeName">
+        <rdfs:domain rdf:resource="&metadata;AttributeList"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#attributeValue -->
+
+    <owl:DatatypeProperty rdf:about="&metadata;attributeValue">
+        <rdfs:domain rdf:resource="&metadata;AttributeList"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#attributeValueType -->
+
+    <owl:DatatypeProperty rdf:about="&metadata;attributeValueType">
+        <rdfs:domain rdf:resource="&metadata;AttributeList"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#date -->
+
+    <owl:DatatypeProperty rdf:about="&metadata;date">
+        <rdfs:domain rdf:resource="&metadata;Start_Date"/>
+        <rdfs:domain rdf:resource="&metadata;Stop_Date"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="&metadata;name">
+        <rdfs:domain rdf:resource="&metadata;Object_Name"/>
+        <rdfs:domain rdf:resource="&metadata;Source_Name"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#size -->
+
+    <owl:DatatypeProperty rdf:about="&metadata;size">
+        <rdfs:domain rdf:resource="&metadata;Size"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#time -->
+
+    <owl:DatatypeProperty rdf:about="&metadata;time">
+        <rdfs:domain rdf:resource="&metadata;Analytic_Time"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <rdf:Description rdf:about="&owl;topDataProperty">
+        <rdfs:domain rdf:resource="&metadata;Object_Name"/>
+        <rdfs:domain rdf:resource="&metadata;Source_Name"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#Access_Constraint -->
+
+    <owl:Class rdf:about="&metadata;Access_Constraint">
+        <rdfs:subClassOf rdf:resource="&metadata;Monitoring_DataSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#Analytic_Time -->
+
+    <owl:Class rdf:about="&metadata;Analytic_Time"/>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#AttributeList -->
+
+    <owl:Class rdf:about="&metadata;AttributeList">
+        <rdfs:subClassOf rdf:resource="&metadata;Monitoring_DataSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#CloudPlatformServiceConfiguration -->
+
+    <owl:Class rdf:about="&metadata;CloudPlatformServiceConfiguration"/>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#Configuration -->
+
+    <owl:Class rdf:about="&metadata;Configuration">
+        <rdfs:subClassOf rdf:resource="&metadata;Monitored_Object"/>
+        <rdfs:comment>It describes the structure of monitored object.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#Cost -->
+
+    <owl:Class rdf:about="&metadata;Cost"/>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#Data_Format -->
+
+    <owl:Class rdf:about="&metadata;Data_Format">
+        <rdfs:subClassOf rdf:resource="&metadata;Monitoring_DataSet"/>
+        <rdfs:comment>This class describes the structure of data.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#Monitored_Object -->
+
+    <owl:Class rdf:about="&metadata;Monitored_Object"/>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#Monitoring_DataSet -->
+
+    <owl:Class rdf:about="&metadata;Monitoring_DataSet"/>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#Object_Name -->
+
+    <owl:Class rdf:about="&metadata;Object_Name">
+        <rdfs:subClassOf rdf:resource="&metadata;Monitored_Object"/>
+        <rdfs:comment>It describes the name of monitored object like house building, traffic etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#Organization_Address -->
+
+    <owl:Class rdf:about="&metadata;Organization_Address">
+        <rdfs:subClassOf rdf:resource="&metadata;Monitored_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#Organization_Configuration -->
+
+    <owl:Class rdf:about="&metadata;Organization_Configuration">
+        <rdfs:subClassOf rdf:resource="&metadata;Monitored_Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#Quality -->
+
+    <owl:Class rdf:about="&metadata;Quality"/>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#Size -->
+
+    <owl:Class rdf:about="&metadata;Size">
+        <rdfs:subClassOf rdf:resource="&metadata;Monitoring_DataSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#Source_Name -->
+
+    <owl:Class rdf:about="&metadata;Source_Name">
+        <rdfs:subClassOf rdf:resource="&metadata;Monitoring_DataSet"/>
+        <rdfs:comment>It describes the name of sensor who mnitored the object like carbon dioxide sensor, current sensor etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#Start_Date -->
+
+    <owl:Class rdf:about="&metadata;Start_Date">
+        <rdfs:subClassOf rdf:resource="&metadata;Temporal_Coverage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#Stop_Date -->
+
+    <owl:Class rdf:about="&metadata;Stop_Date">
+        <rdfs:subClassOf rdf:resource="&metadata;Temporal_Coverage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#Temporal_Coverage -->
+
+    <owl:Class rdf:about="&metadata;Temporal_Coverage">
+        <rdfs:subClassOf rdf:resource="&metadata;Monitoring_DataSet"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
