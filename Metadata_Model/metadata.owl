@@ -85,8 +85,8 @@
     <!-- http://www.metadata.org/ontologies/metadata.owl#isAccessedBy -->
 
     <owl:ObjectProperty rdf:about="&metadata;isAccessedBy">
-        <rdfs:range rdf:resource="&metadata;Access_Constraint"/>
         <rdfs:domain rdf:resource="&metadata;Monitoring_DataSet"/>
+        <rdfs:range rdf:resource="&metadata;User_Info"/>
     </owl:ObjectProperty>
     
 
@@ -194,14 +194,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://www.metadata.org/ontologies/metadata.owl#Access_Constraint -->
-
-    <owl:Class rdf:about="&metadata;Access_Constraint">
-        <rdfs:subClassOf rdf:resource="&metadata;Monitoring_DataSet"/>
-    </owl:Class>
     
 
 
@@ -330,6 +322,12 @@
     <owl:Class rdf:about="&metadata;Temporal_Coverage">
         <rdfs:subClassOf rdf:resource="&metadata;Monitoring_DataSet"/>
     </owl:Class>
+    
+
+
+    <!-- http://www.metadata.org/ontologies/metadata.owl#User_Info -->
+
+    <owl:Class rdf:about="&metadata;User_Info"/>
 </rdf:RDF>
 
 
