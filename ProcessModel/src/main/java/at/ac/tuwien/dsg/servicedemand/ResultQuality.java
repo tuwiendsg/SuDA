@@ -23,7 +23,7 @@ public class ResultQuality {
     {
         
     
-      String uri="http://DataAnalyticService.com#";
+      String uri="http://DataAnalyticServiceDemand.com#";
       String objectName="DataAnalyticServiceDemand";
       Model model=ModelFactory.createDefaultModel();
       
