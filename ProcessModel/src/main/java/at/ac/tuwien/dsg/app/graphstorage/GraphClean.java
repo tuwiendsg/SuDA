@@ -5,6 +5,7 @@
  */
 package at.ac.tuwien.dsg.app.graphstorage;
 
+import at.ac.tuwien.dsg.app.graphstorage.test.OperateProperty;
 //import at.ac.tuwien.dsg.dataenrichment.Configuration;
 import java.util.logging.Level;
 import java.util.logging.Logger;

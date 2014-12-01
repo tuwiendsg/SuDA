@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package at.ac.tuwien.dsg.app.graphstorage;
+package at.ac.tuwien.dsg.app.graphstorage.test;
+
+import at.ac.tuwien.dsg.app.graphstorage.*;
 
 
 /**
@@ -14,7 +16,7 @@ public class OperateProperty {
     
     public String getGraphStorageURI()
     {
-     return "jdbcuri";
+     return "virtuosouri";
     }
     
     public String getGraphStorageUserName()
@@ -25,6 +27,11 @@ public class OperateProperty {
     public String getGraphStoragePassword()
     {
         return "dba";
+    }
+    
+     public String getrdfURI()
+    {
+        return "http://DataAnalyticServiceUnit.com";
     }
     
     

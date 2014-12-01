@@ -6,6 +6,7 @@
 package at.ac.tuwien.dsg.app.graphstorage;
 
 //import at.ac.tuwien.dsg.dataenrichment.Configuration;
+import at.ac.tuwien.dsg.app.graphstorage.test.OperateProperty;
 import com.hp.hpl.jena.graph.Node;
 import com.hp.hpl.jena.graph.NodeFactory;
 import com.hp.hpl.jena.graph.Triple;
