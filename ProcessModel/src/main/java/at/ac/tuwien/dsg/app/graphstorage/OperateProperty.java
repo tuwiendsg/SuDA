@@ -14,12 +14,8 @@ public class OperateProperty {
     
     public String getGraphStorageURI()
     {
-       return "jdbcuri";    }
-    
-   /* public String getrdfURI()
-    {
-        return "http://windtunnel.com";
-    }*/
+     return "jdbcuri";
+    }
     
     public String getGraphStorageUserName()
     {
@@ -30,10 +26,6 @@ public class OperateProperty {
     {
         return "dba";
     }
-    /*public String getgui()
-    {
-        //return "http://localhost:8080/DataEnrichment/" ;
-        return "http://128.130.172.230:8080/DataEnrichment/" ;
-    }*/
+    
     
 }
