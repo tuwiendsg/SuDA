@@ -5,7 +5,7 @@
  */
 package at.ac.tuwien.dsg.app.graphstorage.test;
 
-import at.ac.tuwien.dsg.app.graphstorage.*;
+
 
 
 /**
@@ -16,7 +16,7 @@ public class OperateProperty {
     
     public String getGraphStorageURI()
     {
-     return "virtuosouri";
+    return "virtuosouri";
     }
     
     public String getGraphStorageUserName()

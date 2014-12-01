@@ -6,7 +6,6 @@
 package at.ac.tuwien.dsg.app.graphstorage.test;
 
 import at.ac.tuwien.dsg.app.graphretrieve.RDFManipulationSubject;
-import at.ac.tuwien.dsg.app.graphstorage.*;
 import java.util.LinkedList;
 
 
@@ -17,7 +16,7 @@ import java.util.LinkedList;
 public class MainRDFGraph {
    public static void main(String []p)
    {
-       
+       //graph retrival
        RDFManipulationSubject subject=new RDFManipulationSubject();
        LinkedList<String> subjectname=subject.queryResultSubject("Visualization", "taskName");
        for(int i=0;i<subjectname.size();i++)
@@ -25,6 +24,7 @@ public class MainRDFGraph {
            System.out.println("subjectName="+ subjectname.get(i));
        }
        
+       //for graph storage
        //for clean the graph
        
        /*String fileuri="http://DataAnalyticService.com";
