@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<process id="P1">
+    <activity name="Sampling">
+        <from>start</from>
+        <to>end</to>
+    </activity>
+</process>
