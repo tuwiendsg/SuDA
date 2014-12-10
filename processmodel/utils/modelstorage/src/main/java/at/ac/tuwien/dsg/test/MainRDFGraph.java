@@ -18,66 +18,24 @@ import java.util.LinkedList;
 public class MainRDFGraph {
    public static void main(String []p)
    {
-       //graph retrival
-       /*RDFManipulationSubject subject=new RDFManipulationSubject();
-       LinkedList<String> subjectname=subject.queryResultSubject("Visualization", "taskName");
-       for(int i=0;i<subjectname.size();i++)
-       {
-           System.out.println("subjectName="+ subjectname.get(i));
-       }*/
+        String fileuri="http://DataAnalyticServiceDemand.com";
        
+        //for clean the graph
+            new GraphClean().graphRemove(fileuri);
+        
        //for graph storage
-       //for clean the graph
-       
-       String fileuri="http://DataAnalyticService.com";
-        new GraphClean().graphRemove(fileuri);
-       
-       String fileName="./example/DataAnalyticServiceDemand.rdf";
-       
-        try
-        {
-        new RDFGraphStorage().GraphStore(fileName,fileuri);
-        }
-        catch(Exception e)
-        {
-            System.out.println("exception occured="+e);
-        }
-        /*String fileuri="http://DataAnalyticServiceUnit.com";
-       new GraphClean().graphRemove(fileuri);
-       //
-       String fileName="./example2/AnalyticServiceUnit1.rdf";
-       
-        try
-        {
-        new RDFGraphStorage().GraphStore(fileName,fileuri);
-        }
-        catch(Exception e)
-        {
-            System.out.println("exception occured="+e);
-        }
+            {
+                String fileName="./example/DataAnalyticServiceDemand.rdf";
+                try
+                    {
+                        new RDFGraphStorage().GraphStore(fileName,fileuri);
+                        System.out.println("graph is stored");
+                    }
+                catch(Exception e)
+                    {
+                        System.out.println("exception occured="+e);
+                    }
+            }
         
-        //
-        String fileName2="./example2/AnalyticServiceUnit2.rdf";
-       
-        try
-        {
-        new RDFGraphStorage().GraphStore(fileName2,fileuri);
-        }
-        catch(Exception e)
-        {
-            System.out.println("exception occured="+e);
-        }
-        
-        //
-        String fileName3="./example2/AnalyticServiceUnit3.rdf";
-       
-        try
-        {
-        new RDFGraphStorage().GraphStore(fileName3,fileuri);
-        }
-        catch(Exception e)
-        {
-            System.out.println("exception occured="+e);
-        }*/
    }
 }

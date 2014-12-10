@@ -1,0 +1,13 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:result="http://DataAnalyticServiceDemand.com#" > 
+  <rdf:Description rdf:about="http://DataAnalyticServiceDemand.com#Quality">
+    <result:TaskNumber>2</result:TaskNumber>
+    <result:processType>Batch Job Processing</result:processType>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://DataAnalyticServiceDemand.com#DataAnalyticServiceDemand">
+    <result:hasQuality rdf:resource="http://DataAnalyticServiceDemand.com#Quality"/>
+    <result:serviceCost>5 euro/MB</result:serviceCost>
+    <result:analyticTime>60sec/MB</result:analyticTime>
+  </rdf:Description>
+</rdf:RDF>

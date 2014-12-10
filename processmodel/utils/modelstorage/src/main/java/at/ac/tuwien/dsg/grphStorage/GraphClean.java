@@ -15,7 +15,7 @@ import virtuoso.jena.driver.VirtGraph;
 
 /**
  *
- * @author dsg
+ * @author Anindita
  */
 public class GraphClean {
     public void graphRemove(String fileURI)
