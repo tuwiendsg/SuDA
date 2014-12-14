@@ -16,7 +16,10 @@ public class OperateProperty {
     
     public String getGraphStorageURI()
     {
-    return "virtuoso IP Address";
+    //return "jdbc:virtuoso://localhost:1111";
+        return "jdbc:virtuoso://128.130.172.230:1111";
+        //return "jdbc:virtuoso://10.99.0.9:1111";
+    
     }
     
     public String getGraphStorageUserName()

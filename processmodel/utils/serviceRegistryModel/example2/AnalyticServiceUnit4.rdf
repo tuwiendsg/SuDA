@@ -1,10 +1,10 @@
- <rdf:RDF
+<rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:service="http://DataAnalyticServiceUnit.com#" > 
-  <rdf:Description rdf:about="http://DataAnalyticServiceUnit.com#AnalyticServiceUnit1">
+  <rdf:Description rdf:about="http://DataAnalyticServiceUnit.com#AnalyticServiceUnit4">
+    <service:analyticTime>6.78sec/MB</service:analyticTime>
     <service:taskName>Sampling</service:taskName>
+    <service:serviceCost>13.90euro/MB</service:serviceCost>
     <service:processType>Batch Job Processing</service:processType>
-    <service:serviceCost>5 euro/MB</service:serviceCost>
-    <service:analyticTime>60sec/MB</service:analyticTime>
   </rdf:Description>
 </rdf:RDF>
