@@ -35,11 +35,11 @@ public class UserInterface extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        serviceCostTextField = new javax.swing.JTextField();
+        analyticCostTextField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         analyticTimeTextField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        taskNumberTextField = new javax.swing.JTextField();
+        completenessTextField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         processTypeTextField = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -48,16 +48,28 @@ public class UserInterface extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         objectNameTextField = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        processedDataTypeTextField = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        consistencyTextField = new javax.swing.JTextField();
+        reliabilityTextField = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        accuracyTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Information about QUALITY OF RESULT");
 
-        jLabel2.setText("Service Cost (euro/MB):");
+        jLabel2.setText("Analytic Cost (euro/MB):");
 
-        serviceCostTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+        analyticCostTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                serviceCostTextFieldKeyTyped(evt);
+                analyticCostTextFieldKeyTyped(evt);
             }
         });
 
@@ -69,15 +81,21 @@ public class UserInterface extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Task Number:");
+        jLabel4.setText("Completeness (%):");
 
-        taskNumberTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+        completenessTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                taskNumberTextFieldKeyTyped(evt);
+                completenessTextFieldKeyTyped(evt);
             }
         });
 
-        jLabel5.setText("Process Type:");
+        jLabel5.setText("Consistency (%):");
+
+        processTypeTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                processTypeTextFieldActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Submit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -102,9 +120,53 @@ public class UserInterface extends javax.swing.JFrame {
 
         jLabel8.setText("Object Name:");
 
+        objectNameTextField.setToolTipText("DataAnalyticServiceDemand");
         objectNameTextField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 objectNameTextFieldMouseClicked(evt);
+            }
+        });
+
+        jLabel9.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel9.setFont(new java.awt.Font("Lucida Sans", 0, 10)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 0, 204));
+        jLabel9.setText("e.g., DataAnalyticServiceDemand");
+        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 51, 0)));
+
+        jLabel10.setText("Information about identifier:");
+
+        jLabel11.setText("Information about data analytic services:");
+
+        jLabel12.setText("Processed Data Type:");
+
+        jLabel13.setText("Information about Data Quality:");
+
+        jLabel14.setText("Processes Type:");
+
+        jLabel15.setText("Reliability (%):");
+
+        consistencyTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consistencyTextFieldActionPerformed(evt);
+            }
+        });
+        consistencyTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                consistencyTextFieldKeyTyped(evt);
+            }
+        });
+
+        reliabilityTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                reliabilityTextFieldKeyTyped(evt);
+            }
+        });
+
+        jLabel16.setText("Accuracy (%):");
+
+        accuracyTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                accuracyTextFieldKeyTyped(evt);
             }
         });
 
@@ -118,44 +180,64 @@ public class UserInterface extends javax.swing.JFrame {
                         .addGap(64, 64, 64)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel11))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel13))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(24, 24, 24)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5))
-                                .addGap(76, 76, 76))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel3)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel6)
-                                        .addComponent(jLabel2)
-                                        .addComponent(jLabel8)))
-                                .addGap(18, 18, 18)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(serviceCostTextField)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel14))
+                        .addGap(117, 117, 117)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(analyticTimeTextField)
-                                .addComponent(taskNumberTextField)
-                                .addComponent(processTypeTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
-                            .addComponent(uriTextField)
-                            .addComponent(objectNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE))
+                                .addComponent(analyticTimeTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                                .addComponent(analyticCostTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                                .addComponent(processedDataTypeTextField))
+                            .addComponent(processTypeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(consistencyTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(completenessTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel16))
+                                .addGap(96, 96, 96)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton1)
+                                    .addComponent(uriTextField)
+                                    .addComponent(objectNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                                    .addComponent(reliabilityTextField)
+                                    .addComponent(accuracyTextField))))
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel7)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(213, 213, 213))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jLabel1)
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel10)
+                .addGap(3, 3, 3)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(uriTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
@@ -163,32 +245,57 @@ public class UserInterface extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(objectNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(serviceCostTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(analyticTimeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(taskNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(processTypeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9))
                 .addGap(18, 18, 18)
+                .addComponent(jLabel11)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(analyticCostTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(analyticTimeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(processedDataTypeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(processTypeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(completenessTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel5))
+                            .addComponent(consistencyTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                        .addComponent(jLabel15))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(reliabilityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(accuracyTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addGap(33, 33, 33)
                 .addComponent(jButton1)
-                .addContainerGap())
+                .addGap(51, 51, 51))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void serviceCostTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serviceCostTextFieldKeyTyped
+    private void analyticCostTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_analyticCostTextFieldKeyTyped
 char c=evt.getKeyChar();
       if(! (Character.isDigit(c) || (c==KeyEvent.VK_PERIOD || c==KeyEvent.VK_DELETE || c==KeyEvent.VK_BACK_SPACE)))
         {
@@ -196,7 +303,7 @@ char c=evt.getKeyChar();
           evt.consume();
       
       }         
-    }//GEN-LAST:event_serviceCostTextFieldKeyTyped
+    }//GEN-LAST:event_analyticCostTextFieldKeyTyped
 
     private void analyticTimeTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_analyticTimeTextFieldKeyTyped
         char c=evt.getKeyChar();
@@ -208,27 +315,32 @@ char c=evt.getKeyChar();
       } 
     }//GEN-LAST:event_analyticTimeTextFieldKeyTyped
 
-    private void taskNumberTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_taskNumberTextFieldKeyTyped
+    private void completenessTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_completenessTextFieldKeyTyped
 char c=evt.getKeyChar();
-      if(! (Character.isDigit(c) || (c==KeyEvent.VK_DELETE || c==KeyEvent.VK_BACK_SPACE)))
+      if(! (Character.isDigit(c) || (c==KeyEvent.VK_PERIOD || c==KeyEvent.VK_DELETE || c==KeyEvent.VK_BACK_SPACE)))
         {
          getToolkit().beep();
           evt.consume();
       
       }          
-    }//GEN-LAST:event_taskNumberTextFieldKeyTyped
+    }//GEN-LAST:event_completenessTextFieldKeyTyped
 
     private void uriTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_uriTextFieldMouseClicked
-uriTextField.setText("DataAnalyticServiceUnit.com");        
+uriTextField.setText("www.DataAnalyticServiceDemand.com");        
     }//GEN-LAST:event_uriTextFieldMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
  JFrame frame=new JFrame("test");
        HashMap information=new HashMap();
-       information.put("taskNumber", new String(taskNumberTextField.getText()));
+       //information.put("taskNumber", new String(completenessTextField.getText()));
        information.put("processType", new String(processTypeTextField.getText()));
-       information.put("serviceCost", new String(serviceCostTextField.getText()+"euro/MB"));
+       information.put("analyticCost", new String(analyticCostTextField.getText()+"euro/MB"));
        information.put("analyticTime", new String(analyticTimeTextField.getText()+"sec/MB"));
+       information.put("processedDataType", new String(processedDataTypeTextField.getText()));
+       information.put("completeness", new String(completenessTextField.getText()+"%"));
+       information.put("consistency", new String(consistencyTextField.getText()+"%"));
+       information.put("reliability", new String(reliabilityTextField.getText()+"%"));
+       information.put("accuracy", new String(accuracyTextField.getText()+"%"));
        if(uriTextField.getText().isEmpty()) 
        {
            JOptionPane.showMessageDialog(frame, "You should enter the value of URI","Warning Message", JOptionPane.WARNING_MESSAGE);
@@ -246,6 +358,44 @@ uriTextField.setText("DataAnalyticServiceUnit.com");
     private void objectNameTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_objectNameTextFieldMouseClicked
 objectNameTextField.setText("DataAnalyticServiceDemand");        // TODO add your handling code here:
     }//GEN-LAST:event_objectNameTextFieldMouseClicked
+
+    private void processTypeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processTypeTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_processTypeTextFieldActionPerformed
+
+    private void consistencyTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consistencyTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_consistencyTextFieldActionPerformed
+
+    private void consistencyTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_consistencyTextFieldKeyTyped
+        char c=evt.getKeyChar();
+      if(! (Character.isDigit(c) || (c==KeyEvent.VK_PERIOD || c==KeyEvent.VK_DELETE || c==KeyEvent.VK_BACK_SPACE)))
+        {
+         getToolkit().beep();
+          evt.consume();
+      
+      }     // TODO add your handling code here:
+    }//GEN-LAST:event_consistencyTextFieldKeyTyped
+
+    private void reliabilityTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_reliabilityTextFieldKeyTyped
+char c=evt.getKeyChar();
+      if(! (Character.isDigit(c) || (c==KeyEvent.VK_PERIOD || c==KeyEvent.VK_DELETE || c==KeyEvent.VK_BACK_SPACE)))
+        {
+         getToolkit().beep();
+          evt.consume();
+      
+      }             // TODO add your handling code here:
+    }//GEN-LAST:event_reliabilityTextFieldKeyTyped
+
+    private void accuracyTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_accuracyTextFieldKeyTyped
+char c=evt.getKeyChar();
+      if(! (Character.isDigit(c) || (c==KeyEvent.VK_PERIOD || c==KeyEvent.VK_DELETE || c==KeyEvent.VK_BACK_SPACE)))
+        {
+         getToolkit().beep();
+          evt.consume();
+      
+      }             // TODO add your handling code here:
+    }//GEN-LAST:event_accuracyTextFieldKeyTyped
 
     /**
      * @param args the command line arguments
@@ -283,9 +433,20 @@ objectNameTextField.setText("DataAnalyticServiceDemand");        // TODO add you
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField accuracyTextField;
+    private javax.swing.JTextField analyticCostTextField;
     private javax.swing.JTextField analyticTimeTextField;
+    private javax.swing.JTextField completenessTextField;
+    private javax.swing.JTextField consistencyTextField;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -293,10 +454,11 @@ objectNameTextField.setText("DataAnalyticServiceDemand");        // TODO add you
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField objectNameTextField;
     private javax.swing.JTextField processTypeTextField;
-    private javax.swing.JTextField serviceCostTextField;
-    private javax.swing.JTextField taskNumberTextField;
+    private javax.swing.JTextField processedDataTypeTextField;
+    private javax.swing.JTextField reliabilityTextField;
     private javax.swing.JTextField uriTextField;
     // End of variables declaration//GEN-END:variables
 }

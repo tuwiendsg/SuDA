@@ -1,0 +1,17 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:result="http://DataAnalyticServiceUnit.com#" > 
+  <rdf:Description rdf:about="http://DataAnalyticServiceUnit.com#Quality">
+    <result:accuracy>56%</result:accuracy>
+    <result:consistency>34%</result:consistency>
+    <result:reliability>45%</result:reliability>
+    <result:completeness>23%</result:completeness>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://DataAnalyticServiceUnit.com#DataAnalyticServiceDemand12">
+    <result:analyticTime>23sec/MB</result:analyticTime>
+    <result:analyticCost>12euro/MB</result:analyticCost>
+    <result:processedDataType>text</result:processedDataType>
+    <result:processType>streaming</result:processType>
+    <result:hasQuality rdf:resource="http://DataAnalyticServiceUnit.com#Quality"/>
+  </rdf:Description>
+</rdf:RDF>

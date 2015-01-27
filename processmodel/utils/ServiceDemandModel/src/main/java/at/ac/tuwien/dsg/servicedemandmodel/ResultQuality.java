@@ -58,22 +58,47 @@ public class ResultQuality {
       demandResource.addProperty(analyticTime, informationMap.getValue().toString());                          
       }
       
-      if(informationMap.getKey().equals("serviceCost"))
+      if(informationMap.getKey().equals("analyticCost"))
       {
-      Property serviceCost=model.createProperty(uri+"serviceCost");
+      Property serviceCost=model.createProperty(uri+"analyticCost");
       demandResource.addProperty(serviceCost,informationMap.getValue().toString());                             
       }
       
       if(informationMap.getKey().equals("processType"))
       {
       Property processType=model.createProperty(uri+"processType");
-      qualityResource.addProperty(processType,informationMap.getValue().toString());                      
+      demandResource.addProperty(processType,informationMap.getValue().toString());                      
+      }
+      
+      if(informationMap.getKey().equals("processedDataType"))
+      {
+      Property processType=model.createProperty(uri+"processedDataType");
+      demandResource.addProperty(processType,informationMap.getValue().toString());                      
       }
      
-      if(informationMap.getKey().equals("taskNumber"))
+      //under quality node
+      if(informationMap.getKey().equals("completeness"))
       {
-      Property locationProperty=model.createProperty(uri+"taskNumber");
-      qualityResource.addProperty(locationProperty,informationMap.getValue().toString());                     //"2");
+      Property locationProperty=model.createProperty(uri+"completeness");
+      qualityResource.addProperty(locationProperty,informationMap.getValue().toString());                     
+      }
+      
+      if(informationMap.getKey().equals("reliability"))
+      {
+      Property locationProperty=model.createProperty(uri+"reliability");
+      qualityResource.addProperty(locationProperty,informationMap.getValue().toString());                   
+      }
+      
+      if(informationMap.getKey().equals("accuracy"))
+      {
+      Property locationProperty=model.createProperty(uri+"accuracy");
+      qualityResource.addProperty(locationProperty,informationMap.getValue().toString());                     
+      }
+      
+      if(informationMap.getKey().equals("consistency"))
+      {
+      Property locationProperty=model.createProperty(uri+"consistency");
+      qualityResource.addProperty(locationProperty,informationMap.getValue().toString());                     
       }
       
     }
