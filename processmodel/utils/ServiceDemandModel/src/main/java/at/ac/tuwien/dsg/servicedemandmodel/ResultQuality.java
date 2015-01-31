@@ -40,8 +40,8 @@ public class ResultQuality {
       Resource demandResource=model.createResource(uri+objectName);
       
       //for assigning of sub resource
-      Resource qualityResource=model.createResource(uri+"Quality");
-      Property hasQuality=model.createProperty(uri+"hasQuality");
+      Resource qualityResource=model.createResource(uri+"DataQuality");
+      Property hasQuality=model.createProperty(uri+"DataQuality");
       demandResource.addProperty(hasQuality, qualityResource);
       
       //for the HashMap 
@@ -52,52 +52,52 @@ public class ResultQuality {
       while(i.hasNext())
       {
       Map.Entry informationMap=(Map.Entry)i.next();
-      if(informationMap.getKey().equals("analyticTime"))
+      if(informationMap.getKey().equals("executionTime"))
       {
-      Property analyticTime=model.createProperty(uri+"analyticTime");
+      Property analyticTime=model.createProperty(uri+"hasExecutionTime");
       demandResource.addProperty(analyticTime, informationMap.getValue().toString());                          
       }
       
-      if(informationMap.getKey().equals("analyticCost"))
+      if(informationMap.getKey().equals("serviceCost"))
       {
-      Property serviceCost=model.createProperty(uri+"analyticCost");
+      Property serviceCost=model.createProperty(uri+"hasServiceCost");
       demandResource.addProperty(serviceCost,informationMap.getValue().toString());                             
       }
       
       if(informationMap.getKey().equals("processType"))
       {
-      Property processType=model.createProperty(uri+"processType");
+      Property processType=model.createProperty(uri+"hasProcessType");
       demandResource.addProperty(processType,informationMap.getValue().toString());                      
       }
       
       if(informationMap.getKey().equals("processedDataType"))
       {
-      Property processType=model.createProperty(uri+"processedDataType");
+      Property processType=model.createProperty(uri+"hasProcessedDataType");
       demandResource.addProperty(processType,informationMap.getValue().toString());                      
       }
      
       //under quality node
       if(informationMap.getKey().equals("completeness"))
       {
-      Property locationProperty=model.createProperty(uri+"completeness");
+      Property locationProperty=model.createProperty(uri+"hasCompleteness");
       qualityResource.addProperty(locationProperty,informationMap.getValue().toString());                     
       }
       
       if(informationMap.getKey().equals("reliability"))
       {
-      Property locationProperty=model.createProperty(uri+"reliability");
+      Property locationProperty=model.createProperty(uri+"hasReliability");
       qualityResource.addProperty(locationProperty,informationMap.getValue().toString());                   
       }
       
       if(informationMap.getKey().equals("accuracy"))
       {
-      Property locationProperty=model.createProperty(uri+"accuracy");
+      Property locationProperty=model.createProperty(uri+"hasAccuracy");
       qualityResource.addProperty(locationProperty,informationMap.getValue().toString());                     
       }
       
       if(informationMap.getKey().equals("consistency"))
       {
-      Property locationProperty=model.createProperty(uri+"consistency");
+      Property locationProperty=model.createProperty(uri+"hasConsistency");
       qualityResource.addProperty(locationProperty,informationMap.getValue().toString());                     
       }
       

@@ -35,9 +35,9 @@ public class UserInterface extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        analyticCostTextField = new javax.swing.JTextField();
+        serviceCostTextField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        analyticTimeTextField = new javax.swing.JTextField();
+        executionTimeTextField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         completenessTextField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -65,19 +65,19 @@ public class UserInterface extends javax.swing.JFrame {
 
         jLabel1.setText("Information about QUALITY OF RESULT");
 
-        jLabel2.setText("Analytic Cost (euro/MB):");
+        jLabel2.setText("Service Cost (euro/MB):");
 
-        analyticCostTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+        serviceCostTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                analyticCostTextFieldKeyTyped(evt);
+                serviceCostTextFieldKeyTyped(evt);
             }
         });
 
-        jLabel3.setText("Analytic Time (sec/MB):");
+        jLabel3.setText("Execution Time (sec/MB):");
 
-        analyticTimeTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+        executionTimeTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                analyticTimeTextFieldKeyTyped(evt);
+                executionTimeTextFieldKeyTyped(evt);
             }
         });
 
@@ -195,8 +195,8 @@ public class UserInterface extends javax.swing.JFrame {
                         .addGap(117, 117, 117)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(analyticTimeTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                                .addComponent(analyticCostTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                                .addComponent(executionTimeTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                                .addComponent(serviceCostTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
                                 .addComponent(processedDataTypeTextField))
                             .addComponent(processTypeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
@@ -252,11 +252,11 @@ public class UserInterface extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(analyticCostTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(serviceCostTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(analyticTimeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(executionTimeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(processedDataTypeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -295,7 +295,7 @@ public class UserInterface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void analyticCostTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_analyticCostTextFieldKeyTyped
+    private void serviceCostTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serviceCostTextFieldKeyTyped
 char c=evt.getKeyChar();
       if(! (Character.isDigit(c) || (c==KeyEvent.VK_PERIOD || c==KeyEvent.VK_DELETE || c==KeyEvent.VK_BACK_SPACE)))
         {
@@ -303,9 +303,9 @@ char c=evt.getKeyChar();
           evt.consume();
       
       }         
-    }//GEN-LAST:event_analyticCostTextFieldKeyTyped
+    }//GEN-LAST:event_serviceCostTextFieldKeyTyped
 
-    private void analyticTimeTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_analyticTimeTextFieldKeyTyped
+    private void executionTimeTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_executionTimeTextFieldKeyTyped
         char c=evt.getKeyChar();
       if(! (Character.isDigit(c) || (c==KeyEvent.VK_PERIOD || c==KeyEvent.VK_DELETE || c==KeyEvent.VK_BACK_SPACE)))
         {
@@ -313,7 +313,7 @@ char c=evt.getKeyChar();
           evt.consume();
       
       } 
-    }//GEN-LAST:event_analyticTimeTextFieldKeyTyped
+    }//GEN-LAST:event_executionTimeTextFieldKeyTyped
 
     private void completenessTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_completenessTextFieldKeyTyped
 char c=evt.getKeyChar();
@@ -334,8 +334,8 @@ uriTextField.setText("www.DataAnalyticServiceDemand.com");
        HashMap information=new HashMap();
        //information.put("taskNumber", new String(completenessTextField.getText()));
        information.put("processType", new String(processTypeTextField.getText()));
-       information.put("analyticCost", new String(analyticCostTextField.getText()+"euro/MB"));
-       information.put("analyticTime", new String(analyticTimeTextField.getText()+"sec/MB"));
+       information.put("serviceCost", new String(serviceCostTextField.getText()+"euro/MB"));
+       information.put("executionTime", new String(executionTimeTextField.getText()+"sec/MB"));
        information.put("processedDataType", new String(processedDataTypeTextField.getText()));
        information.put("completeness", new String(completenessTextField.getText()+"%"));
        information.put("consistency", new String(consistencyTextField.getText()+"%"));
@@ -434,10 +434,9 @@ char c=evt.getKeyChar();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField accuracyTextField;
-    private javax.swing.JTextField analyticCostTextField;
-    private javax.swing.JTextField analyticTimeTextField;
     private javax.swing.JTextField completenessTextField;
     private javax.swing.JTextField consistencyTextField;
+    private javax.swing.JTextField executionTimeTextField;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -459,6 +458,7 @@ char c=evt.getKeyChar();
     private javax.swing.JTextField processTypeTextField;
     private javax.swing.JTextField processedDataTypeTextField;
     private javax.swing.JTextField reliabilityTextField;
+    private javax.swing.JTextField serviceCostTextField;
     private javax.swing.JTextField uriTextField;
     // End of variables declaration//GEN-END:variables
 }
