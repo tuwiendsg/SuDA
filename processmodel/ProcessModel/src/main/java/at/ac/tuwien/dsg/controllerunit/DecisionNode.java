@@ -7,8 +7,12 @@ package at.ac.tuwien.dsg.controllerunit;
 
 /**
  *
- * @author dsg
+ * @author Anindita
  */
+
+
+//// This class is used to design the structure of Desicion Node to Deciion Tree
+
 public class DecisionNode {
     public int nodeID;
     public String value=null;
@@ -27,10 +31,6 @@ public class DecisionNode {
         value=decisionValue;
     }
     
-    public void createRootNode(int newNodeID, String newquestansNode)
-   {
-       rootNode=new DecisionNode( newNodeID, newquestansNode);
-       System.out.println("rootnode is created");
-   }
+    
     
 }

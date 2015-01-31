@@ -8,8 +8,10 @@ package at.ac.tuwien.dsg.controllerunit;
 
 /**
  *
- * @author dsg
+ * @author Anindita
  */
+
+///This class is used to design the structure of Event Node to Desicion Tree
 public class EventNode {
     public int nodeID;
     public String condition;
