@@ -44,6 +44,14 @@ public class ResultQuality {
       Property hasQuality=model.createProperty(uri+"DataQuality");
       demandResource.addProperty(hasQuality, qualityResource);
       
+      
+      //
+      Resource priorityResource=model.createResource(uri+"ObjectPriority");
+      Property hasPriorityProperty=model.createProperty(uri+"objectPriority");
+      demandResource.addProperty(hasPriorityProperty, priorityResource);
+      
+      
+      
       //for the HashMap 
       Set informationSet=information.entrySet();
       Iterator i=informationSet.iterator();

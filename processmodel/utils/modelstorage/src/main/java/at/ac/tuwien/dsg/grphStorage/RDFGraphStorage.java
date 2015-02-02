@@ -27,14 +27,24 @@ import virtuoso.jena.driver.VirtGraph;
  * @author Anindita
  */
 public class RDFGraphStorage {
-    public void GraphStore(String fileName,String fileURI)throws Exception 
+    private static String fileURI=null;
+
+    public static RDFGraphStorage getInstance(String newFileURI) {
+        fileURI=newFileURI;
+        return new RDFGraphStorage();
+    }
+    
+    
+    
+    
+    public void GraphStore(String fileName)throws Exception 
     {
         
         //consider the rdf file
         File rdfFileName=new File(fileName);
         FileReader rdfFileRead=new FileReader(rdfFileName);
         
-        //Model model=new ModelMem();
+        
         Model model=ModelFactory.createDefaultModel();
         model.read(rdfFileRead,RDFS.getURI());
         
@@ -42,17 +52,9 @@ public class RDFGraphStorage {
         Statement stmt;
         
         
-        OperateProperty operateProperty=new OperateProperty();
-        String url=operateProperty.getGraphStorageURI();
-        String username=operateProperty.getGraphStorageUserName();
-        String password=operateProperty.getGraphStoragePassword();
-        
-        /*String url="jdbc:virtuoso://"+Configuration.getConfig("VIRTUOSO.IP")+":"+Configuration.getConfig("VIRTUOSO.PORT");
-        String username=Configuration.getConfig("VIRTUOSO.USERNAME");
-        String password=Configuration.getConfig("VIRTUOSO.PASSWORD");*/
-        
        
-        VirtGraph virtgraph=new VirtGraph(fileURI,url,username,password);
+        String url="jdbc:virtuoso://"+new OperateProperty().getVirtuosoIP()+":1111";
+        VirtGraph virtgraph=new VirtGraph(fileURI,url,"dba","dba");
          
        
         

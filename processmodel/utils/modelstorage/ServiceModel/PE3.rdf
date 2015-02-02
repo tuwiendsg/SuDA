@@ -1,0 +1,24 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:result="http://DataAnalyticServiceUnit.com#" > 
+  <rdf:Description rdf:about="http://DataAnalyticServiceUnit.com#DataQuality">
+    <result:hasObject rdf:resource="http://DataAnalyticServiceUnit.com#DataAccuracy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://DataAnalyticServiceUnit.com#ExecutionTime">
+    <result:hasDataUnit>second</result:hasDataUnit>
+    <result:hasDataValue>25</result:hasDataValue>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://DataAnalyticServiceUnit.com#ExecutionCost">
+    <result:hasDataUnit>euro</result:hasDataUnit>
+    <result:hasDataValue>20</result:hasDataValue>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://DataAnalyticServiceUnit.com#PE3">
+    <result:DataQuality rdf:resource="http://DataAnalyticServiceUnit.com#DataQuality"/>
+    <result:hasObject rdf:resource="http://DataAnalyticServiceUnit.com#ExecutionCost"/>
+    <result:hasObject rdf:resource="http://DataAnalyticServiceUnit.com#ExecutionTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://DataAnalyticServiceUnit.com#DataAccuracy">
+    <result:hasDataUnit>%</result:hasDataUnit>
+    <result:hasDataValue>50</result:hasDataValue>
+  </rdf:Description>
+</rdf:RDF>

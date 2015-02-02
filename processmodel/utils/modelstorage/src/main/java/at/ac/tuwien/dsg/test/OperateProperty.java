@@ -14,28 +14,14 @@ package at.ac.tuwien.dsg.test;
  */
 public class OperateProperty {
     
-    public String getGraphStorageURI()
+    public String getVirtuosoIP()
     {
     //return "jdbc:virtuoso://localhost:1111";
-        return "jdbc:virtuoso://128.130.172.230:1111";
+        return "128.130.172.230";
         //return "jdbc:virtuoso://10.99.0.9:1111";
     
     }
     
-    public String getGraphStorageUserName()
-    {
-        return "dba";
-    }
-    
-    public String getGraphStoragePassword()
-    {
-        return "dba";
-    }
-    
-     /*public String getrdfURI()
-    {
-        return "http://DataAnalyticServiceUnit.com";
-    }*/
     
     
 }

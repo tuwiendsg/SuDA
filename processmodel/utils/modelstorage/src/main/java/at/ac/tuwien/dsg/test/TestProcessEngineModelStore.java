@@ -5,31 +5,27 @@
  */
 package at.ac.tuwien.dsg.test;
 
-//import at.ac.tuwien.dsg.app.graphretrieve.RDFManipulationSubject;
-import at.ac.tuwien.dsg.grphStorage.GraphClean;
 import at.ac.tuwien.dsg.grphStorage.RDFGraphStorage;
-import java.util.LinkedList;
-
 
 /**
  *
  * @author Anindita
  */
-public class MainRDFGraph {
-   public static void main(String []p)
+public class TestProcessEngineModelStore {
+    public static void main(String []p)
    {
-        String fileuri="http://DataAnalyticServiceDemand.com";
+        String fileuri="http://DataAnalyticServiceUnit.com";
        
         //for clean the graph
             //new GraphClean().graphRemove(fileuri);
         
        //for graph storage
             {
-                String fileName="./example/DataAnalyticServiceDemand.rdf";
+                String fileName="./ServiceModel/PE6.rdf";
                 try
                     {
                         RDFGraphStorage.getInstance(fileuri).GraphStore(fileName);
-                        System.out.println("graph is stored");
+                        System.out.println(fileName+" graph is stored under the table name "+fileuri);
                     }
                 catch(Exception e)
                     {

@@ -1,0 +1,36 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:result="http://DataAnalyticServiceDemand.com#" > 
+  <rdf:Description rdf:about="http://DataAnalyticServiceDemand.com#DataAccuracy">
+    <result:hasPriority>3</result:hasPriority>
+    <result:hasDataCondition>greater than</result:hasDataCondition>
+    <result:hasDataUnit>%</result:hasDataUnit>
+    <result:hasDataValue>50</result:hasDataValue>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://DataAnalyticServiceDemand.com#ProcessedDataSize">
+    <result:hasDataUnit>MB</result:hasDataUnit>
+    <result:hasLowerProcessedDataSize>1</result:hasLowerProcessedDataSize>
+    <result:hasUpperProcessedDataSize>2</result:hasUpperProcessedDataSize>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://DataAnalyticServiceDemand.com#DataQuality">
+    <result:hasObject rdf:resource="http://DataAnalyticServiceDemand.com#DataAccuracy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://DataAnalyticServiceDemand.com#ExecutionTime">
+    <result:hasPriority>2</result:hasPriority>
+    <result:hasDataCondition>less than</result:hasDataCondition>
+    <result:hasDataUnit>second</result:hasDataUnit>
+    <result:hasDataValue>20</result:hasDataValue>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://DataAnalyticServiceDemand.com#ResultQualitySampling">
+    <result:hasObject rdf:resource="http://DataAnalyticServiceDemand.com#ProcessedDataSize"/>
+    <result:hasObject rdf:resource="http://DataAnalyticServiceDemand.com#ExecutionCost"/>
+    <result:hasObject rdf:resource="http://DataAnalyticServiceDemand.com#ExecutionTime"/>
+    <result:DataQuality rdf:resource="http://DataAnalyticServiceDemand.com#DataQuality"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://DataAnalyticServiceDemand.com#ExecutionCost">
+    <result:hasPriority>1</result:hasPriority>
+    <result:hasDataCondition>less than</result:hasDataCondition>
+    <result:hasDataUnit>euro</result:hasDataUnit>
+    <result:hasDataValue>50</result:hasDataValue>
+  </rdf:Description>
+</rdf:RDF>

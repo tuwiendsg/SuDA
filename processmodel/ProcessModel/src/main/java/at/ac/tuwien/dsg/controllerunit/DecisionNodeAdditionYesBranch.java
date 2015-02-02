@@ -8,11 +8,12 @@ package at.ac.tuwien.dsg.controllerunit;
 
 /**
  *
- * @author dsg
+ * @author Anindita
  */
 public class DecisionNodeAdditionYesBranch {
     public static DecisionNode rootNode=null;
     
+  ///////create the object of this class.....  
     public static DecisionNodeAdditionYesBranch getInstance(DecisionNode newRootNode)
     {
       rootNode=newRootNode;
@@ -22,7 +23,7 @@ public class DecisionNodeAdditionYesBranch {
     
     
     
- ///////////////////Add Decision Node at the No Branch of Event Node  
+ ///////////////////Add Decision Node at the Yes Branch if root node is exist... 
    public void addYesDecisionNode(int existingNodeID,int nodeID, String newDecisionNode)
    {
       if(rootNode!=null)
@@ -40,6 +41,8 @@ public class DecisionNodeAdditionYesBranch {
           System.out.println("There have no existence of rootnode");
       }
    }
+  
+   ////search the tree and findout the yes branch of event node will be empty....
    public boolean searchTreeAndAddYesDecisionNode(EventNode currentNode, int existingNodeID, int newNodeID, String newDecisionNode )
    {
        if(currentNode.nodeID==existingNodeID)
@@ -88,6 +91,7 @@ public class DecisionNodeAdditionYesBranch {
                  
    }
    
+   ////////For the searching of tree if decision node is occured...
    public boolean searchSubTreeAndAddYesDecisionNode12(DecisionNode currentNode, int existingNodeID, int nodeID, String value)
    {
        if(currentNode.nodeID==existingNodeID)

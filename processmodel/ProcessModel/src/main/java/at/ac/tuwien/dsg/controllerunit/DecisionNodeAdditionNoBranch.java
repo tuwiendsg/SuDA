@@ -10,8 +10,6 @@ package at.ac.tuwien.dsg.controllerunit;
  * @author Anindita
  */
 
-///////////////////Add Decision Node at the No Branch of Event Node
-
 public class DecisionNodeAdditionNoBranch {
     
     public static DecisionNode rootNode;
@@ -23,7 +21,7 @@ public class DecisionNodeAdditionNoBranch {
         return new DecisionNodeAdditionNoBranch();
     }
   
-//used to find the place for new Decision Node and also assign it   
+////////////////////Add Decision Node at the No Branch if root node is exist...  
   public void addNoDecisionNode(int existingNode, int nodeID, String newDecisionNode)
    {
        if(rootNode!=null)
@@ -42,7 +40,7 @@ public class DecisionNodeAdditionNoBranch {
        }
    }
    
- //     
+ //////search the tree and findout the no branch of event node will be empty....     
    public boolean searchTreeAndAddNoDecisionNode(EventNode currentNode, int existingNode, int nodeID, String newDecisionNode)
    {
        if(currentNode.nodeID==existingNode)
@@ -88,7 +86,8 @@ public class DecisionNodeAdditionNoBranch {
            }
        }
    }
-   
+  
+   ////////For the searching of tree if decision node is occured...
    public boolean searchSubTreeAndAddNoDecisionNode12(DecisionNode currentNode, int existingNode, int nodeID, String newDecisionNode)
    {
        if(currentNode.nodeID==existingNode)
@@ -99,7 +98,7 @@ public class DecisionNodeAdditionNoBranch {
        else{
            if(currentNode.decisionbranch==null)
            {
-               System.out.println("ERROR: "+existingNode+"  This node have no existence");
+               //System.out.println("ERROR: "+existingNode+"  This node have no existence");
                return false;
            }
            else
