@@ -3,40 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package at.ac.tuwien.dsg.servicedemandmodel;
-
-/**
- *
- * @author dsg
- */
-
+package at.ac.tuwien.dsg.serviceregistrymodel;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.vocabulary.RDF;
-import com.hp.hpl.jena.vocabulary.RDFS;
-import com.hp.hpl.jena.vocabulary.RDFS;
 import java.io.File;
 import java.io.FileWriter;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
 
 /**
  *
- * @author Anindita
+ * @author dsg
  */
-public class QualityOfResultModel {
-     public String uri="http://DataAnalyticServiceDemand.com#";
-      public String objectName="ResultQualityOfSampling";
+public class AvailableProcessEngine {
+    public String uri="http://DataAnalyticProcessEngineUnit.com#";
+      public String objectName="PE5";
       
 
     public static void main(String []p)
     {
-        new QualityOfResultModel().modelCreation();
+        new QualityOfServiceParameter().modelCreation();
     }
   
     //for the rdf file creation
@@ -54,17 +41,12 @@ public class QualityOfResultModel {
       demandResource.addProperty(hasObjectProperty, executionTimeResource);
           
       Property timeValueProperty=model.createProperty(uri+"hasDataValue");
-      executionTimeResource.addProperty(timeValueProperty, "20");
+      executionTimeResource.addProperty(timeValueProperty, "19");
       
       Property timeUnitProperty=model.createProperty(uri+"hasDataUnit");
       executionTimeResource.addProperty(timeUnitProperty, "second");
       
-     Property timeConditionProperty=model.createProperty(uri+"hasDataCondition");
-      executionTimeResource.addProperty(timeConditionProperty, "less than");
-      
-      Property priorityProperty=model.createProperty(uri+"hasPriority");
-      executionTimeResource.addProperty(priorityProperty, "2");
-    }
+     }
       
     ////Assign the data property of ExecutionCost sub class....
       {
@@ -75,35 +57,13 @@ public class QualityOfResultModel {
       
           
       Property costValueProperty=model.createProperty(uri+"hasDataValue");
-      serviceCostResource.addProperty(costValueProperty, "50");
+      serviceCostResource.addProperty(costValueProperty, "45");
       
       Property timeUnitProperty=model.createProperty(uri+"hasDataUnit");
       serviceCostResource.addProperty(timeUnitProperty, "euro");
       
-     Property timeConditionProperty=model.createProperty(uri+"hasDataCondition");
-      serviceCostResource.addProperty(timeConditionProperty, "less than");
+     }
       
-      Property priorityProperty=model.createProperty(uri+"hasPriority");
-      serviceCostResource.addProperty(priorityProperty, "1");
-      
-      
-      }
-      
-     ////Assign the data property of Processed data size sub class....
-      {
-       Resource dataSizeResource=model.createResource(uri+"ProcessedDataSize");
-       Property hasObjectProperty=model.createProperty(uri+"hasObject");
-       demandResource.addProperty(hasObjectProperty, dataSizeResource);
-          
-      Property upperDataSizeProperty=model.createProperty(uri+"hasUpperProcessedDataSize");
-      dataSizeResource.addProperty(upperDataSizeProperty,"2"); 
-      
-      Property lowerDataSizeProperty=model.createProperty(uri+"hasLowerProcessedDataSize");
-      dataSizeResource.addProperty(lowerDataSizeProperty, "1");
-      
-      Property timeUnitProperty=model.createProperty(uri+"hasDataUnit");
-      dataSizeResource.addProperty(timeUnitProperty, "MB");
-      }
      
      ////Assign the data property of DataAccuracy sub class....
       {
@@ -120,16 +80,11 @@ public class QualityOfResultModel {
       
           
       Property accuracyValueProperty=model.createProperty(uri+"hasDataValue");
-      qualityAccuracyResource.addProperty(accuracyValueProperty, "10");
+      qualityAccuracyResource.addProperty(accuracyValueProperty, "25");
       
       Property timeUnitProperty=model.createProperty(uri+"hasDataUnit");
       qualityAccuracyResource.addProperty(timeUnitProperty, "%");
       
-     Property timeConditionProperty=model.createProperty(uri+"hasDataCondition");
-      qualityAccuracyResource.addProperty(timeConditionProperty, "greater than");
-      
-      Property priorityProperty=model.createProperty(uri+"hasPriority");
-      qualityAccuracyResource.addProperty(priorityProperty, "3");
       }
       
       //for rdf model
@@ -158,9 +113,5 @@ public class QualityOfResultModel {
       
       
       
-    }
-    
+    } 
 }
-
-      
-      

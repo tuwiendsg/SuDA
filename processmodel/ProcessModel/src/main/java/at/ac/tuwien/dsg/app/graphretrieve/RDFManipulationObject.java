@@ -13,6 +13,7 @@ import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryFactory;
 import com.hp.hpl.jena.util.iterator.ExtendedIterator;
 import java.util.LinkedList;
+import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import virtuoso.jena.driver.VirtGraph;
@@ -25,7 +26,8 @@ import virtuoso.jena.driver.VirtuosoQueryExecutionFactory;
  */
 public class RDFManipulationObject {
     
-    private static String RDFURI=null;  //this variable determines table name and URI of RDF file
+    private static String RDFURI=null;  //this variable determines table name 
+    
     
     public static RDFManipulationObject getInstance(String newRDFURI)
     {
@@ -37,21 +39,12 @@ public class RDFManipulationObject {
     {
         
         //LinkedList<String> monitoringInformation=new LinkedList<String>();
-        String value=null;
-        
-        //OperateProperty operateProperty=new OperateProperty();
-        //String SubjectAccessURI=operateProperty.getrdfURIForAccess();
-        String virtuosoIPAddress="jdbc:virtuoso://"+new OperateProperty().getVirtuosoIP()+":1111";
-        //String username=operateProperty.getGraphStorageUserName();
-        //String password=operateProperty.getGraphStoragePassword();
-        
-        
-        String subjectwithURI=RDFURI+"#"+subject;
-        
-        
+        String value="";
+        System.out.println("RDFURI="+RDFURI);
        
-        
-        //String storageName=operateProperty.getrdfURITable();
+        String virtuosoIPAddress="jdbc:virtuoso://"+new OperateProperty().getVirtuosoIP()+":1111";
+        String subjectwithURI=new StringTokenizer(RDFURI,"#").nextToken()+"#"+subject;
+        System.out.println("subjectwithURI="+subjectwithURI);
         Query sparql = QueryFactory.create("SELECT ?s ?p ?o FROM <"+RDFURI+"> WHERE { ?s ?p ?o }");
         
         
@@ -74,7 +67,7 @@ public class RDFManipulationObject {
                     {
 
                         Triple tr=(Triple)iter.next();
-                        value=tr.getObject().toString().replace("\"", "");
+                        value=value+tr.getObject().toString().replace("\"", "");
                     }
           
         

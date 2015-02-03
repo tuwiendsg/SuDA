@@ -11,7 +11,7 @@
     <result:hasPriority>3</result:hasPriority>
     <result:hasDataCondition>greater than</result:hasDataCondition>
     <result:hasDataUnit>%</result:hasDataUnit>
-    <result:hasDataValue>50</result:hasDataValue>
+    <result:hasDataValue>10</result:hasDataValue>
   </rdf:Description>
   <rdf:Description rdf:about="http://DataAnalyticServiceDemand.com#ProcessedDataSize">
     <result:hasDataUnit>MB</result:hasDataUnit>

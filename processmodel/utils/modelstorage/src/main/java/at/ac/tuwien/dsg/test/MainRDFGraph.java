@@ -18,14 +18,14 @@ import java.util.LinkedList;
 public class MainRDFGraph {
    public static void main(String []p)
    {
-        String fileuri="http://DataAnalyticServiceDemand.com";
+        String fileuri="http://DataAnalyticServiceDemand.com#ResultQualityOfSampling";
        
         //for clean the graph
-            //new GraphClean().graphRemove(fileuri);
+           new GraphClean().graphRemove(fileuri);
         
        //for graph storage
             {
-                String fileName="./example/DataAnalyticServiceDemand.rdf";
+                String fileName="./example/ResultQualityOfSampling.rdf";
                 try
                     {
                         RDFGraphStorage.getInstance(fileuri).GraphStore(fileName);

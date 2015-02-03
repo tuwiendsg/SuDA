@@ -14,7 +14,7 @@ import at.ac.tuwien.dsg.grphStorage.RDFGraphStorage;
 public class TestProcessEngineModelStore {
     public static void main(String []p)
    {
-        String fileuri="http://DataAnalyticServiceUnit.com";
+        String fileuri="http://DataAnalyticServiceUnit.com#PE6";
        
         //for clean the graph
             //new GraphClean().graphRemove(fileuri);

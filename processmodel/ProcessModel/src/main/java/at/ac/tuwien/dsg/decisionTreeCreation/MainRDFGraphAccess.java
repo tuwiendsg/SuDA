@@ -35,6 +35,8 @@ public class MainRDFGraphAccess {
        }
       }
        
+       
+       
        //Data Collection for ExecutionTime Event Node generation
        {
        String dataValue=RDFManipulationObject.getInstance(RDFURI).queryResultSubject("ExecutionTime", "hasDataValue");
@@ -43,10 +45,13 @@ public class MainRDFGraphAccess {
        String dataConditionValue=RDFManipulationObject.getInstance(RDFURI).queryResultSubject("ExecutionTime", "hasDataCondition");
        System.out.println("dataConditionValue="+ dataConditionValue);
        
+       String dataUnit=RDFManipulationObject.getInstance(RDFURI).queryResultSubject("ExecutionTime", "hasDataUnit");
+       System.out.println("DataUnit="+ dataUnit);
+       
        int priorityValue=Integer.parseInt(RDFManipulationObject.getInstance(RDFURI).queryResultSubject("ExecutionTime", "hasPriority"));
        System.out.println("priorityValue="+ priorityValue);
        
-       eventCondition.set((priorityValue-1), "ExecutionTime "+dataConditionValue+" "+dataValue);
+       eventCondition.set((priorityValue-1), "ExecutionTime "+dataConditionValue.replace(" ", "")+" "+dataValue+" "+dataUnit);
        }
        
        //Data Collection for ExecutionCost Event Node generation
@@ -57,10 +62,13 @@ public class MainRDFGraphAccess {
        String dataConditionValue=RDFManipulationObject.getInstance(RDFURI).queryResultSubject("ExecutionCost", "hasDataCondition");
        System.out.println("dataConditionValue="+ dataConditionValue);
        
+       String dataUnit=RDFManipulationObject.getInstance(RDFURI).queryResultSubject("ExecutionCost", "hasDataUnit");
+       System.out.println("dataConditionValue="+ dataUnit);
+       
        int priorityValue=Integer.parseInt(RDFManipulationObject.getInstance(RDFURI).queryResultSubject("ExecutionCost", "hasPriority"));
        System.out.println("priorityValue="+ priorityValue);
        
-       eventCondition.set((priorityValue-1), "ExecutionCost "+dataConditionValue+" "+dataValue);
+       eventCondition.set((priorityValue-1), "ExecutionCost "+dataConditionValue.replace(" ", "")+" "+dataValue+" "+dataUnit);
        }
        
        //Data Collection for ExecutionTime Event Node generation
@@ -71,10 +79,13 @@ public class MainRDFGraphAccess {
        String dataConditionValue=RDFManipulationObject.getInstance(RDFURI).queryResultSubject("DataAccuracy", "hasDataCondition");
        System.out.println("dataConditionValue="+ dataConditionValue);
        
+        String dataUnit=RDFManipulationObject.getInstance(RDFURI).queryResultSubject("DataAccuracy", "hasDataUnit");
+       System.out.println("dataConditionValue="+ dataUnit);
+       
        int priorityValue=Integer.parseInt(RDFManipulationObject.getInstance(RDFURI).queryResultSubject("DataAccuracy", "hasPriority"));
        System.out.println("priorityValue="+ priorityValue);
        
-       eventCondition.set((priorityValue-1), "DataAccuracy "+dataConditionValue+" "+dataValue);
+       eventCondition.set((priorityValue-1), "DataAccuracy "+dataConditionValue.replace(" ", "")+" "+dataValue+" "+dataUnit);
        }
        
       return eventCondition;
