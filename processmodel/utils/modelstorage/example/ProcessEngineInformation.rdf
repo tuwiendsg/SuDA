@@ -1,0 +1,29 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:engine="http://DataAnalyticProcessEngine.com#" > 
+  <rdf:Description rdf:about="http://DataAnalyticProcessEngine.com#Querying">
+    <engine:hasObject>http://DataAnalyticEngine.com#PE24</engine:hasObject>
+    <engine:hasObject>http://DataAnalyticEngine.com#PE20</engine:hasObject>
+    <engine:hasObject>http://DataAnalyticEngine.com#PE10</engine:hasObject>
+    <engine:hasObject>http://DataAnalyticEngine.com#PE11</engine:hasObject>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://DataAnalyticProcessEngine.com#Sampling">
+    <engine:hasObject>http://DataAnalyticServiceUnit.com#PE6</engine:hasObject>
+    <engine:hasObject>http://DataAnalyticServiceUnit.com#PE5</engine:hasObject>
+    <engine:hasObject>http://DataAnalyticServiceUnit.com#PE4</engine:hasObject>
+    <engine:hasObject>http://DataAnalyticServiceUnit.com#PE3</engine:hasObject>
+    <engine:hasObject>http://DataAnalyticServiceUnit.com#PE2</engine:hasObject>
+    <engine:hasObject>http://DataAnalyticServiceUnit.com#PE1</engine:hasObject>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://DataAnalyticProcessEngine.com#ProcessEngineInformation">
+    <engine:hasProcesType rdf:resource="http://DataAnalyticProcessEngine.com#Querying"/>
+    <engine:hasProcesType rdf:resource="http://DataAnalyticProcessEngine.com#Clustering"/>
+    <engine:hasProcesType rdf:resource="http://DataAnalyticProcessEngine.com#Sampling"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://DataAnalyticProcessEngine.com#Clustering">
+    <engine:hasObject>http://DataAnalyticProcessUnit.com#PE10</engine:hasObject>
+    <engine:hasObject>http://DataAnalyticProcessUnit.com#PE9</engine:hasObject>
+    <engine:hasObject>http://DataAnalyticProcessUnit.com#PE8</engine:hasObject>
+    <engine:hasObject>http://DataAnalyticProcessUnit.com#PE7</engine:hasObject>
+  </rdf:Description>
+</rdf:RDF>

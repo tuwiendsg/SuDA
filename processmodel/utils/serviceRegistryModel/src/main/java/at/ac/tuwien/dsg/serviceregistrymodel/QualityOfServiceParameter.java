@@ -14,7 +14,7 @@ import java.io.FileWriter;
 
 /**
  *
- * @author dsg
+ * @author Anindita
  */
 public class QualityOfServiceParameter {
     

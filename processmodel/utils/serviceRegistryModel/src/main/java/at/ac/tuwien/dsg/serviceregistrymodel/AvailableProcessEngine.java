@@ -14,16 +14,16 @@ import java.io.FileWriter;
 
 /**
  *
- * @author dsg
+ * @author Anindita
  */
 public class AvailableProcessEngine {
-    public String uri="http://DataAnalyticProcessEngineUnit.com#";
-      public String objectName="PE5";
+    public String uri="http://DataAnalyticProcessEngine.com#";
+      public String objectName="ProcessEngineInformation";
       
 
     public static void main(String []p)
     {
-        new QualityOfServiceParameter().modelCreation();
+        new AvailableProcessEngine().modelCreation();
     }
   
     //for the rdf file creation
@@ -32,68 +32,59 @@ public class AvailableProcessEngine {
       
       //for assigning of main resource
       Model model=ModelFactory.createDefaultModel();
-      Resource demandResource=model.createResource(uri+objectName);
+      Resource processEngineResource=model.createResource(uri+objectName);
       
-      ////Assign the data property of ExecutionTime sub class....
+      //////Sampling sub node creation
       {
-      Resource executionTimeResource=model.createResource(uri+"ExecutionTime");
-      Property hasObjectProperty=model.createProperty(uri+"hasObject");
-      demandResource.addProperty(hasObjectProperty, executionTimeResource);
-          
-      Property timeValueProperty=model.createProperty(uri+"hasDataValue");
-      executionTimeResource.addProperty(timeValueProperty, "19");
-      
-      Property timeUnitProperty=model.createProperty(uri+"hasDataUnit");
-      executionTimeResource.addProperty(timeUnitProperty, "second");
-      
-     }
-      
-    ////Assign the data property of ExecutionCost sub class....
-      {
-          Resource serviceCostResource=model.createResource(uri+"ExecutionCost");
-          Property hasObjectProperty=model.createProperty(uri+"hasObject");
-          demandResource.addProperty(hasObjectProperty, serviceCostResource);
-          
-      
-          
-      Property costValueProperty=model.createProperty(uri+"hasDataValue");
-      serviceCostResource.addProperty(costValueProperty, "45");
-      
-      Property timeUnitProperty=model.createProperty(uri+"hasDataUnit");
-      serviceCostResource.addProperty(timeUnitProperty, "euro");
-      
-     }
-      
-     
-     ////Assign the data property of DataAccuracy sub class....
-      {
-          
-      Resource qualityResource=model.createResource(uri+"DataQuality");
-      Property hasQuality=model.createProperty(uri+"DataQuality");
-      demandResource.addProperty(hasQuality, qualityResource);
-      
-      
-      Resource qualityAccuracyResource=model.createResource(uri+"DataAccuracy");
-      Property accuracyObjectProperty=model.createProperty(uri+"hasObject");
-      qualityResource.addProperty(accuracyObjectProperty, qualityAccuracyResource);
-          
-      
-          
-      Property accuracyValueProperty=model.createProperty(uri+"hasDataValue");
-      qualityAccuracyResource.addProperty(accuracyValueProperty, "25");
-      
-      Property timeUnitProperty=model.createProperty(uri+"hasDataUnit");
-      qualityAccuracyResource.addProperty(timeUnitProperty, "%");
-      
-      }
+        Resource processTypeResource=model.createResource(uri+"Sampling");
+        Property processTypeProperty=model.createProperty(uri+"hasProcesType");
+        processEngineResource.addProperty(processTypeProperty, processTypeResource);
+        
+        Property objectProperty=model.createProperty(uri+"hasObject");
+        processTypeResource.addProperty(objectProperty, "http://DataAnalyticServiceUnit.com#PE1");
+        processTypeResource.addProperty(objectProperty, "http://DataAnalyticServiceUnit.com#PE2");
+        processTypeResource.addProperty(objectProperty, "http://DataAnalyticServiceUnit.com#PE3");
+        processTypeResource.addProperty(objectProperty, "http://DataAnalyticServiceUnit.com#PE4");
+        processTypeResource.addProperty(objectProperty, "http://DataAnalyticServiceUnit.com#PE5");
+        processTypeResource.addProperty(objectProperty, "http://DataAnalyticServiceUnit.com#PE6");
+        
+    }
+       
+      //Clustering sub node creation
+        {
+        Resource processTypeResource=model.createResource(uri+"Clustering");
+        Property processTypeProperty=model.createProperty(uri+"hasProcesType");
+        processEngineResource.addProperty(processTypeProperty, processTypeResource);
+        
+        Property objectProperty=model.createProperty(uri+"hasObject");
+        processTypeResource.addProperty(objectProperty, "http://DataAnalyticProcessUnit.com#PE7");
+        processTypeResource.addProperty(objectProperty, "http://DataAnalyticProcessUnit.com#PE8");
+        processTypeResource.addProperty(objectProperty, "http://DataAnalyticProcessUnit.com#PE9");
+        processTypeResource.addProperty(objectProperty, "http://DataAnalyticProcessUnit.com#PE10");
+        
+       }
+        
+     //Quering sub node creation
+        {
+        Resource processTypeResource=model.createResource(uri+"Querying");
+        Property processTypeProperty=model.createProperty(uri+"hasProcesType");
+        processEngineResource.addProperty(processTypeProperty, processTypeResource);
+        
+        Property objectProperty=model.createProperty(uri+"hasObject");
+        processTypeResource.addProperty(objectProperty, "http://DataAnalyticEngine.com#PE11");
+        processTypeResource.addProperty(objectProperty, "http://DataAnalyticEngine.com#PE10");
+        processTypeResource.addProperty(objectProperty, "http://DataAnalyticEngine.com#PE20");
+        processTypeResource.addProperty(objectProperty, "http://DataAnalyticEngine.com#PE24");
+        
+    }
       
       //for rdf model
-      model.setNsPrefix("result", uri);
+      model.setNsPrefix("engine", uri);
       model.write(System.out);
       
       //for rdf file storage
       {   
-        File f=new File("./example");
+        File f=new File("./example_processengine");
             if(!f.exists())
             {
                f.mkdir();
@@ -101,8 +92,9 @@ public class AvailableProcessEngine {
             }
           try
             {
-                FileWriter fw=new FileWriter("./example/"+objectName+".rdf");
+                FileWriter fw=new FileWriter("./example_processengine/"+objectName+".rdf");
                 model.write(fw);
+                System.out.println("file is stored");
             }
           catch(Exception e)
             {
