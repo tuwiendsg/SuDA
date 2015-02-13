@@ -14,7 +14,16 @@ import java.util.StringTokenizer;
  *
  * @author Anindita
  */
+//RDFURI="http://DataAnalyticServiceUnit.com#"
 public class SortingForDecisionNode {
+    public static String RDFURI=null;
+    
+    public static SortingForDecisionNode getInstance(String newRDFURI)
+    {
+        RDFURI=newRDFURI;
+       return new SortingForDecisionNode();
+    }
+    
     
     public List<LinkedList<String>> generateDecisionNode(LinkedList<String> processEngineSet, String eventNodeContent)
      {
@@ -30,7 +39,7 @@ public class SortingForDecisionNode {
          {
              for(int i=0;i<processEngineSet.size();i++)
              {
-             int value=RDFGraphAccessForDecisionNode.getInstance("http://DataAnalyticServiceUnit.com#"+processEngineSet.get(i)).conditionValue(conditionName);
+             int value=RDFGraphAccessForDecisionNode.getInstance(RDFURI+processEngineSet.get(i)).conditionValue(conditionName);
              if(value < conditionValue)
              {
                  processEngineSubSetYes.add(processEngineSet.get(i));
@@ -43,7 +52,7 @@ public class SortingForDecisionNode {
          else if (condition.toLowerCase().equals("greaterthan") || condition.equals(">")) {
                  for(int i=0;i<processEngineSet.size();i++)
              {
-             int value=RDFGraphAccessForDecisionNode.getInstance("http://DataAnalyticServiceUnit.com#"+processEngineSet.get(i)).conditionValue(conditionName);
+             int value=RDFGraphAccessForDecisionNode.getInstance(RDFURI+processEngineSet.get(i)).conditionValue(conditionName);
              if(value > conditionValue)
              {
                  processEngineSubSetYes.add(processEngineSet.get(i));
@@ -56,7 +65,7 @@ public class SortingForDecisionNode {
          else if (condition.toLowerCase().equals("greaterandequal") || condition.equals(">=")) {
                  for(int i=0;i<processEngineSet.size();i++)
              {
-             int value=RDFGraphAccessForDecisionNode.getInstance("http://DataAnalyticServiceUnit.com#"+processEngineSet.get(i)).conditionValue(conditionName);
+             int value=RDFGraphAccessForDecisionNode.getInstance(RDFURI+processEngineSet.get(i)).conditionValue(conditionName);
              if(value >= conditionValue)
              {
                  processEngineSubSetYes.add(processEngineSet.get(i));
@@ -68,7 +77,7 @@ public class SortingForDecisionNode {
          else if (condition.toLowerCase().equals("lessandequal") || condition.equals("<=")) {
                  for(int i=0;i<processEngineSet.size();i++)
              {
-             int value=RDFGraphAccessForDecisionNode.getInstance("http://DataAnalyticServiceUnit.com#"+processEngineSet.get(i)).conditionValue(conditionName);
+             int value=RDFGraphAccessForDecisionNode.getInstance(RDFURI+processEngineSet.get(i)).conditionValue(conditionName);
              if(value <= conditionValue)
              {
                  processEngineSubSetYes.add(processEngineSet.get(i));
@@ -81,7 +90,7 @@ public class SortingForDecisionNode {
          else if (condition.toLowerCase().equals("equal") || condition.equals("=")) {
                  for(int i=0;i<processEngineSet.size();i++)
              {
-             int value=RDFGraphAccessForDecisionNode.getInstance("http://DataAnalyticServiceUnit.com#"+processEngineSet.get(i)).conditionValue(conditionName);
+             int value=RDFGraphAccessForDecisionNode.getInstance(RDFURI+processEngineSet.get(i)).conditionValue(conditionName);
              if(value==conditionValue)
              {
                  processEngineSubSetYes.add(processEngineSet.get(i));

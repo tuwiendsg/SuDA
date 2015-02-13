@@ -23,11 +23,17 @@ public class RDFGraphAccessForDecisionNode {
     
    public int  conditionValue (String conditionName)
    {
-       int dataValue=Integer.parseInt(RDFManipulationObject.getInstance(RDFURI).queryResultSubject(conditionName, "hasDataValue"));
-       System.out.println("DataValue="+ dataValue);
+      // int dataValue=Integer.parseInt(RDFManipulationObject.getInstance(RDFURI).queryResultSubject(conditionName, "hasDataValue"));
+       //System.out.println("DataValue="+ dataValue);
        
-     
-      return dataValue;
+       return Integer.parseInt(RDFManipulationObject.getInstance(RDFURI).queryResultSubject(conditionName, "hasDataValue"));
+//return dataValue;
+   }
+   
+   public LinkedList<String> setOfProcessEngine(String subjectName)
+   {
+       
+       return RDFManipulationObject.getInstance(RDFURI).queryResultSubjectList(subjectName, "hasObject");
    }
 
 }

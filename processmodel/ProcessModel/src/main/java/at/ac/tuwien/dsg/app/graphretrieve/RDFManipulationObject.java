@@ -35,34 +35,50 @@ public class RDFManipulationObject {
         return new RDFManipulationObject();
     }
     
-    public String queryResultSubject(String subject, String predicate)
+    public String getVirtuosoIPAddress()
+    {
+        return "jdbc:virtuoso://"+new OperateProperty().getVirtuosoIP()+":1111";
+    }
+    
+    public String getsubjectWithURI(String subject)
     {
         
-        //LinkedList<String> monitoringInformation=new LinkedList<String>();
+        return new StringTokenizer(RDFURI,"#").nextToken()+"#"+subject;
+    }
+    
+    public Query getSPARQL()
+    {
+        return QueryFactory.create("SELECT ?s ?p ?o FROM <"+RDFURI+"> WHERE { ?s ?p ?o }");
+    }
+    
+    public VirtGraph getVirtGraph()
+    {
+        return new VirtGraph(RDFURI,getVirtuosoIPAddress(),"dba","dba");
+    }
+    
+    public Node getSubjectNode(String subject)
+    {
+       return NodeFactory.createURI(getsubjectWithURI(subject)); 
+    }
+     public Node getPredicateNode(String predicate)
+     {
+         return NodeFactory.createURI(predicate);
+     }
+    
+    public String queryResultSubject(String subject, String predicate)
+    {
         String value="";
-        System.out.println("RDFURI="+RDFURI);
-       
-        String virtuosoIPAddress="jdbc:virtuoso://"+new OperateProperty().getVirtuosoIP()+":1111";
-        String subjectwithURI=new StringTokenizer(RDFURI,"#").nextToken()+"#"+subject;
-        System.out.println("subjectwithURI="+subjectwithURI);
-        Query sparql = QueryFactory.create("SELECT ?s ?p ?o FROM <"+RDFURI+"> WHERE { ?s ?p ?o }");
         
         
-        
-        VirtGraph graph=new VirtGraph(RDFURI,virtuosoIPAddress,"dba","dba"); 
-        if(graph.isEmpty())
+        if(getVirtGraph().isEmpty())
             {
                System.out.println("there have no content under the uri of subject");
             }
         else
            {
-                System.out.println("graph.getCount() = " + graph.getCount());  
-                VirtuosoQueryExecution vqe = VirtuosoQueryExecutionFactory.create (sparql, graph);
-
-                Node subjectNode=NodeFactory.createURI(subjectwithURI);
-                Node predicateNode=NodeFactory.createURI(predicate);
-                
-                ExtendedIterator iter=graph.find(subjectNode, predicateNode, Node.ANY);
+                System.out.println("graph.getCount() = " + getVirtGraph().getCount());  
+                VirtuosoQueryExecution vqe = VirtuosoQueryExecutionFactory.create (getSPARQL(), getVirtGraph());
+                ExtendedIterator iter=getVirtGraph().find(getSubjectNode(subject), getPredicateNode(predicate), Node.ANY);
                 for(;iter.hasNext();)
                     {
 
@@ -76,8 +92,37 @@ public class RDFManipulationObject {
         	
         return value;
 }
-}
+
   
 
+  public LinkedList<String> queryResultSubjectList(String subject, String predicate)
+    {
+        
+        LinkedList<String> monitoringInformation=new LinkedList<String>();
+        
+        if(getVirtGraph().isEmpty())
+            {
+               System.out.println("there have no content under the uri of subject");
+            }
+        else
+           {
+                System.out.println("graph.getCount() = " + getVirtGraph().getCount());  
+                VirtuosoQueryExecution vqe = VirtuosoQueryExecutionFactory.create (getSPARQL(), getVirtGraph());
+                 ExtendedIterator iter=getVirtGraph().find(getSubjectNode(subject), getPredicateNode(predicate), Node.ANY);
+                for(;iter.hasNext();)
+                    {
 
+                        Triple tr=(Triple)iter.next();
+                        monitoringInformation.add(tr.getObject().toString().replace("\"", ""));
+                        
+                    }
+          
+        
+                
+        }
+        
+     
+        return monitoringInformation;
+}
 
+}
