@@ -99,6 +99,8 @@ public class RDFManipulationObject {
     {
         
         LinkedList<String> monitoringInformation=new LinkedList<String>();
+        String tempSubject=subject.toLowerCase();
+        String newSubject=Character.toString(tempSubject.charAt(0)).toUpperCase()+tempSubject.substring(1);
         
         if(getVirtGraph().isEmpty())
             {
@@ -108,7 +110,7 @@ public class RDFManipulationObject {
            {
                 System.out.println("graph.getCount() = " + getVirtGraph().getCount());  
                 VirtuosoQueryExecution vqe = VirtuosoQueryExecutionFactory.create (getSPARQL(), getVirtGraph());
-                 ExtendedIterator iter=getVirtGraph().find(getSubjectNode(subject), getPredicateNode(predicate), Node.ANY);
+                 ExtendedIterator iter=getVirtGraph().find(getSubjectNode(newSubject), getPredicateNode(predicate), Node.ANY);
                 for(;iter.hasNext();)
                     {
 
