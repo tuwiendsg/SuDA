@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package at.ac.tuwien.dsg.serviceregistrymodel;
+package at.ac.tuwien.dsg.processEngineServiceModel;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
@@ -20,7 +20,7 @@ public class QualityOfServiceParameter {
     
 
      public String uri="http://DataAnalyticServiceUnit.com#";
-      public String objectName="PE5";
+      public String objectName="PE6";
       
 
     public static void main(String []p)
@@ -43,10 +43,10 @@ public class QualityOfServiceParameter {
       demandResource.addProperty(hasObjectProperty, executionTimeResource);
           
       Property timeValueProperty=model.createProperty(uri+"hasDataValue");
-      executionTimeResource.addProperty(timeValueProperty, "19");
+      executionTimeResource.addProperty(timeValueProperty, "18");
       
       Property timeUnitProperty=model.createProperty(uri+"hasDataUnit");
-      executionTimeResource.addProperty(timeUnitProperty, "second");
+      executionTimeResource.addProperty(timeUnitProperty, "minute");
       
      }
       
@@ -59,7 +59,7 @@ public class QualityOfServiceParameter {
       
           
       Property costValueProperty=model.createProperty(uri+"hasDataValue");
-      serviceCostResource.addProperty(costValueProperty, "45");
+      serviceCostResource.addProperty(costValueProperty, "5");
       
       Property timeUnitProperty=model.createProperty(uri+"hasDataUnit");
       serviceCostResource.addProperty(timeUnitProperty, "euro");
@@ -82,7 +82,7 @@ public class QualityOfServiceParameter {
       
           
       Property accuracyValueProperty=model.createProperty(uri+"hasDataValue");
-      qualityAccuracyResource.addProperty(accuracyValueProperty, "25");
+      qualityAccuracyResource.addProperty(accuracyValueProperty, "5");
       
       Property timeUnitProperty=model.createProperty(uri+"hasDataUnit");
       qualityAccuracyResource.addProperty(timeUnitProperty, "%");

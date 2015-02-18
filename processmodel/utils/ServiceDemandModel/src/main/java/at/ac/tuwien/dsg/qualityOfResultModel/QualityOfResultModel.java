@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package at.ac.tuwien.dsg.servicedemandmodel;
+package at.ac.tuwien.dsg.qualityOfResultModel;
 
 /**
  *
@@ -57,7 +57,7 @@ public class QualityOfResultModel {
       executionTimeResource.addProperty(timeValueProperty, "20");
       
       Property timeUnitProperty=model.createProperty(uri+"hasDataUnit");
-      executionTimeResource.addProperty(timeUnitProperty, "second");
+      executionTimeResource.addProperty(timeUnitProperty, "minute");
       
      Property timeConditionProperty=model.createProperty(uri+"hasDataCondition");
       executionTimeResource.addProperty(timeConditionProperty, "less than");
@@ -102,7 +102,7 @@ public class QualityOfResultModel {
       dataSizeResource.addProperty(lowerDataSizeProperty, "1");
       
       Property timeUnitProperty=model.createProperty(uri+"hasDataUnit");
-      dataSizeResource.addProperty(timeUnitProperty, "MB");
+      dataSizeResource.addProperty(timeUnitProperty, "TB");
       }
      
      ////Assign the data property of DataAccuracy sub class....

@@ -14,7 +14,7 @@
     <result:hasDataValue>10</result:hasDataValue>
   </rdf:Description>
   <rdf:Description rdf:about="http://DataAnalyticServiceDemand.com#ProcessedDataSize">
-    <result:hasDataUnit>MB</result:hasDataUnit>
+    <result:hasDataUnit>TB</result:hasDataUnit>
     <result:hasLowerProcessedDataSize>1</result:hasLowerProcessedDataSize>
     <result:hasUpperProcessedDataSize>2</result:hasUpperProcessedDataSize>
   </rdf:Description>
@@ -24,7 +24,7 @@
   <rdf:Description rdf:about="http://DataAnalyticServiceDemand.com#ExecutionTime">
     <result:hasPriority>2</result:hasPriority>
     <result:hasDataCondition>less than</result:hasDataCondition>
-    <result:hasDataUnit>second</result:hasDataUnit>
+    <result:hasDataUnit>minute</result:hasDataUnit>
     <result:hasDataValue>20</result:hasDataValue>
   </rdf:Description>
   <rdf:Description rdf:about="http://DataAnalyticServiceDemand.com#ExecutionCost">

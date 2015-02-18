@@ -5,7 +5,7 @@
     <result:hasObject rdf:resource="http://DataAnalyticServiceUnit.com#DataAccuracy"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://DataAnalyticServiceUnit.com#ExecutionTime">
-    <result:hasDataUnit>second</result:hasDataUnit>
+    <result:hasDataUnit>minute</result:hasDataUnit>
     <result:hasDataValue>18</result:hasDataValue>
   </rdf:Description>
   <rdf:Description rdf:about="http://DataAnalyticServiceUnit.com#ExecutionCost">
