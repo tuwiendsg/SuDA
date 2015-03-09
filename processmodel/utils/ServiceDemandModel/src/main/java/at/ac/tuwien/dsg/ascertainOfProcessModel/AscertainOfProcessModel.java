@@ -33,39 +33,40 @@ public class AscertainOfProcessModel {
       
         ////Assign the data property of the first process node
       {
-        Resource processTypeResource=model.createResource(uri+"Sampling");
+        Resource processTypeResource=model.createResource(uri+"P1");
         Property processTypeProperty=model.createProperty(uri+"hasObject");
         processResource.addProperty(processTypeProperty, processTypeResource);
         
         Property hasStartNodeProperty=model.createProperty(uri+"hasStartNode");
-        processTypeResource.addProperty(hasStartNodeProperty, "Start");
+        processTypeResource.addProperty(hasStartNodeProperty, "START");
         
         Property hasEndNodeProperty=model.createProperty(uri+"hasEndNode");
-        processTypeResource.addProperty(hasEndNodeProperty, uri+"Querying");
+        processTypeResource.addProperty(hasEndNodeProperty, uri+"P2");
         
         Property hasResultQualityProperty=model.createProperty(uri+"hasQualityOfResultModel");
         processTypeResource.addProperty(hasResultQualityProperty, "http://DataAnalyticServiceDemand.com#ResultQualityOfSampling");
         
-        Property hasProcessTypeNameProperty=model.createProperty(uri+"hasProcessTypeName");
+        Property hasProcessTypeNameProperty=model.createProperty(uri+"hasProcessType");
         processTypeResource.addProperty(hasProcessTypeNameProperty, "Sampling");
     }
         ////Assign the data property of the second process node
         
         {
-        Resource processTypeResource=model.createResource(uri+"Querying");
+        Resource processTypeResource=model.createResource(uri+"P2");
         Property processTypeProperty=model.createProperty(uri+"hasObject");
         processResource.addProperty(processTypeProperty, processTypeResource);
         
         Property hasStartNodeProperty=model.createProperty(uri+"hasStartNode");
-        processTypeResource.addProperty(hasStartNodeProperty, uri+"Sampling");
+        processTypeResource.addProperty(hasStartNodeProperty, uri+"P1");
         
         Property hasEndNodeProperty=model.createProperty(uri+"hasEndNode");
-        processTypeResource.addProperty(hasEndNodeProperty, "End");
+        processTypeResource.addProperty(hasEndNodeProperty, "END");
         
         Property hasResultQualityProperty=model.createProperty(uri+"hasQualityOfResultModel");
         processTypeResource.addProperty(hasResultQualityProperty, "http://DataAnalyticServiceDemand.com#ResultQualityOfQuerying");
         
-        Property hasProcessTypeNameProperty=model.createProperty(uri+"hasProcessTypeName");
+        Property hasProcessTypeNameProperty=model.createProperty(uri+"hasProcessType");
+        
         processTypeResource.addProperty(hasProcessTypeNameProperty, "Querying");
     }
         
